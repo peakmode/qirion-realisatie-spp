@@ -13,3 +13,16 @@ Strategisch visiedocument voor de Directeur Realisatie van Qirion: hoe ziet de s
 ## Status
 
 Werk-in-uitvoering. Aankomende uitbreiding: drie analytische lenzen op Realisatie (organisatiestructuur, AI-impact, productiviteitsbreedte) met synthese-matrix.
+
+## Reviewen met inline comments
+
+Het rapport heeft een ingebouwde annotatie-laag via Hypothesis. Reviewers kunnen:
+
+1. Tekst selecteren in het rapport
+2. Op het pen-icoon klikken dat verschijnt
+3. Een opmerking of vraag plaatsen — zichtbaar in de zijlijn rechts
+4. Op elkaars opmerkingen reageren (threaded)
+
+**Eenmalig nodig:** een gratis Hypothesis-account op [hypothes.is](https://hypothes.is). Werkt ook op telefoon.
+
+**Voor besloten reviews:** maak een Hypothesis private group aan, deel de uitnodigingslink — alleen leden zien dan de annotaties.
