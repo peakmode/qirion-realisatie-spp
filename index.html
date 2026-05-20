@@ -1,0 +1,2887 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visie Directeur Realisatie — Qirion SPP-rapport 2026</title>
+
+<!-- Google Fonts: Inter (body) + Barlow Condensed (display) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --green-900: #7a1418;
+    --green-800: #b01c21;
+    --green-700: #e52329;
+    --green-500: #525ddc;
+    --green-400: #7b83ff;
+    --gray-900: #1a1a1a;
+    --gray-800: #444444;
+    --gray-700: #717171;
+    --gray-600: #b0b0b0;
+    --gray-500: #dedede;
+    --gray-400: #f0f0f0;
+    --gray-300: #f8f8f8;
+    --white: #ffffff;
+    --red: #c53030;
+    --amber: #b07d00;
+  }
+
+  @page { size: A4; margin: 1.5cm; }
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .no-break { page-break-inside: avoid; }
+    .hero-section { min-height: 300px !important; }
+    .toc-bar { display: none; }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--gray-900);
+    background: var(--white);
+    font-size: 16px;
+  }
+
+  /* ===== HERO ===== */
+  .hero-section {
+    position: relative;
+    min-height: 560px;
+    background: linear-gradient(140deg, var(--green-900) 0%, var(--green-800) 50%, #d42025 100%);
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://www.alliander.com/content/uploads/dotcom/Het-energiesysteem-van-de-toekomst-1020x1020.jpg') center center / cover no-repeat;
+    opacity: 0.14;
+    mix-blend-mode: luminosity;
+  }
+  .hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 240px;
+    background: linear-gradient(to top, rgba(122,20,24,0.97), transparent);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 3rem 4rem;
+    max-width: 900px;
+  }
+  .hero-logo {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: var(--white);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    display: block;
+  }
+  .hero-logo img {
+    height: 36px;
+    filter: brightness(0) invert(1);
+    display: block;
+  }
+  .hero-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--white);
+    opacity: 0.85;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    display: inline-block;
+  }
+
+  /* ===== INLINE BRONVERMELDING ===== */
+  .ref {
+    font-size: 0.72rem;
+    color: var(--gray-700);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .section-dark .ref { color: rgba(255,255,255,0.5); }
+  .summary-section .ref { color: rgba(255,255,255,0.55); }
+  .hero-title {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 3.4rem;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.75);
+    font-weight: 400;
+    max-width: 580px;
+    line-height: 1.6;
+  }
+
+  /* ===== LAYOUT ===== */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+
+  /* ===== NAVIGATION ===== */
+  .toc-bar {
+    background: var(--gray-300);
+    border-bottom: 1px solid var(--gray-500);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .toc-bar .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 1.2rem;
+    align-items: center;
+  }
+  .toc-bar a {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--green-700);
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 2px 0;
+  }
+  .toc-bar a:hover { color: var(--green-900); text-decoration: underline; }
+
+  /* ===== SAMENVATTING ===== */
+  .summary-section {
+    background: #3a1518;
+    color: var(--white);
+    padding: 3rem 0;
+  }
+  .summary-section h2 {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1.7rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    border: none;
+    padding: 0;
+    opacity: 0.95;
+  }
+  .summary-section p { margin-bottom: 0.8rem; }
+  .summary-section ul { padding-left: 1.4rem; margin-top: 0.8rem; }
+  .summary-section li { margin: 0.5rem 0; line-height: 1.6; }
+  .summary-section strong { color: var(--white); }
+
+  /* ===== SECTIONS ===== */
+  .section { padding: 3.5rem 0; }
+  .section-alt { background: var(--gray-300); }
+  .section-dark {
+    background: #2d1215;
+    color: var(--white);
+  }
+  .section-dark h2 { color: var(--white); border-bottom-color: rgba(255,255,255,0.3); }
+  .section-dark h3 { color: rgba(255,255,255,0.9); }
+  .section-dark p { color: rgba(255,255,255,0.88); }
+  .section-dark li { color: rgba(255,255,255,0.88); }
+  .section-dark strong { color: var(--white); }
+  .section-dark .callout-insight { background: rgba(255,255,255,0.08); border-left-color: var(--green-500); color: var(--white); }
+  .section-dark .callout-warning { background: rgba(255,220,100,0.12); border-left-color: #f0c030; color: rgba(255,255,255,0.9); }
+  .section-dark .callout-opportunity { background: rgba(168,236,88,0.1); border-left-color: var(--green-500); color: rgba(255,255,255,0.9); }
+  .section-dark table th { background: rgba(255,255,255,0.12); color: var(--white); }
+  .section-dark table td { border-bottom-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.85); }
+  .section-dark table tr:nth-child(even) { background: rgba(255,255,255,0.04); }
+
+  h2 {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--green-800);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--green-500);
+  }
+  h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--green-700);
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+  }
+  h4 {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--green-800);
+    margin-bottom: 0.3rem;
+  }
+  p { margin-bottom: 0.85rem; }
+  ul, ol { margin: 0.4rem 0 0.9rem 0; padding-left: 1.4rem; }
+  li { margin: 0.3rem 0; line-height: 1.65; }
+
+  /* ===== STAT CARDS ===== */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 1.8rem 0;
+  }
+  .stat-row-3 { grid-template-columns: repeat(3, 1fr); }
+  .stat-card {
+    background: var(--white);
+    border: 1px solid var(--gray-500);
+    border-top: 4px solid var(--green-700);
+    border-radius: 0 0 8px 8px;
+    padding: 1.2rem 1rem 1rem;
+    text-align: center;
+  }
+  .stat-card .number {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 2.6rem;
+    color: var(--green-700);
+    line-height: 1;
+  }
+  .stat-card .label {
+    font-size: 0.76rem;
+    color: var(--gray-800);
+    margin-top: 0.5rem;
+    line-height: 1.4;
+  }
+  .section-dark .stat-card {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(255,255,255,0.12);
+    border-top-color: var(--green-500);
+  }
+  .section-dark .stat-card .number { color: var(--white); }
+  .section-dark .stat-card .label { color: rgba(255,255,255,0.7); }
+  .section-alt .stat-card { background: var(--white); }
+
+  /* ===== CALLOUTS ===== */
+  .callout {
+    padding: 1rem 1.3rem;
+    margin: 1.2rem 0;
+    border-radius: 0 8px 8px 0;
+    border-left: 4px solid;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .callout strong { display: block; margin-bottom: 0.25rem; font-size: 0.88rem; }
+  .callout-insight { background: #edf7f1; border-left-color: var(--green-700); }
+  .callout-insight strong { color: var(--green-800); }
+  .callout-warning { background: #fef8ec; border-left-color: #d4a017; }
+  .callout-warning strong { color: var(--amber); }
+  .callout-risk { background: #fdf2f2; border-left-color: var(--red); }
+  .callout-risk strong { color: var(--red); }
+  .callout-opportunity { background: #edf9e8; border-left-color: #52b840; }
+  .callout-opportunity strong { color: var(--green-500); }
+  .callout-critical {
+    background: var(--red);
+    color: var(--white);
+    padding: 1.2rem 1.5rem;
+    border-radius: 8px;
+    border-left: none;
+    margin: 1.4rem 0;
+    font-size: 0.92rem;
+  }
+  .callout-critical strong { color: #ffc8c8; display: inline; }
+
+  /* ===== TABLES ===== */
+  table { width: 100%; border-collapse: collapse; font-size: 0.87rem; margin: 1rem 0; }
+  th {
+    background: var(--green-800);
+    color: var(--white);
+    padding: 0.65rem 0.9rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.3px;
+  }
+  td { padding: 0.55rem 0.9rem; border-bottom: 1px solid var(--gray-500); vertical-align: top; }
+  tr:nth-child(even) { background: var(--gray-300); }
+
+  /* ===== TAGS ===== */
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+  .tag-urgent { background: #fce4ec; color: #c53030; }
+  .tag-soon { background: #fef3cd; color: #856404; }
+  .tag-later { background: #d4edda; color: #155724; }
+  .tag-system { background: #e3f2fd; color: #1565c0; }
+
+  /* ===== VISUAL DIVIDERS (vervanging voor afbeeldingen) ===== */
+  .visual-divider {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #2d1215 0%, #3a1518 50%, #4a1a1e 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .visual-divider::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(168,236,88,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 30%, rgba(168,236,88,0.06) 0%, transparent 45%);
+  }
+  .visual-divider .divider-quote {
+    position: relative;
+    z-index: 2;
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: rgba(255,255,255,0.9);
+    text-align: center;
+    padding: 0 2rem;
+    max-width: 700px;
+    line-height: 1.3;
+  }
+  .visual-divider .divider-quote em {
+    color: var(--green-400);
+    font-style: normal;
+  }
+  .visual-divider-sm {
+    height: 80px;
+    background: var(--green-700);
+  }
+
+  /* ===== SYSTEM CARDS ===== */
+  .system-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin: 1.5rem 0;
+  }
+  .system-card {
+    background: var(--white);
+    border: 1px solid var(--gray-500);
+    border-top: 4px solid var(--green-700);
+    border-radius: 0 0 8px 8px;
+    padding: 1.4rem;
+  }
+  .system-card h4 {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--green-800);
+    margin-bottom: 0.2rem;
+  }
+  .system-card .system-role {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gray-700);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.8rem;
+  }
+  .system-card ul { font-size: 0.88rem; margin-bottom: 0; }
+  .system-card li { margin: 0.25rem 0; }
+  .system-highlight { border-top-color: #00a651; }
+
+  /* ===== INTEGRATION BOX ===== */
+  .integration-box {
+    background: var(--green-900);
+    color: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem 1.8rem;
+    margin: 1.5rem 0;
+  }
+  .integration-box h4 {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--green-400);
+    margin-bottom: 0.6rem;
+  }
+  .integration-box p { font-size: 0.9rem; color: rgba(255,255,255,0.85); margin-bottom: 0.5rem; }
+
+  /* ===== PROMPT BLOCK ===== */
+  .prompt-block {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1.3rem 1.5rem;
+    border-radius: 8px;
+    font-family: 'Cascadia Code', 'Consolas', 'Courier New', monospace;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    margin: 1.2rem 0;
+    white-space: pre-wrap;
+  }
+  .prompt-block .pr { color: #a8ec58; }
+  .prompt-block .pc { color: #4ec9b0; }
+  .prompt-block .pd { color: #dcdcaa; }
+  .prompt-block .pf { color: #ce9178; }
+
+  /* ===== WEEK PLAN ===== */
+  .week-plan {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .week-block {
+    background: var(--white);
+    border: 1px solid var(--gray-500);
+    border-top: 4px solid var(--green-700);
+    border-radius: 0 0 8px 8px;
+    padding: 1.3rem;
+  }
+  .week-block h4 {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--green-800);
+    margin-bottom: 0.3rem;
+  }
+  .week-block .time {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--green-500);
+    background: var(--green-800);
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 9999px;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.3px;
+  }
+  .week-block ul { font-size: 0.87rem; }
+
+  /* ===== DO / DONT ===== */
+  .do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.2rem 0; }
+  .do-box, .dont-box { padding: 1.2rem; border-radius: 8px; font-size: 0.9rem; }
+  .do-box { background: #edf9e8; border: 1px solid #b7e1b7; }
+  .do-box strong { color: var(--green-500); display: block; margin-bottom: 0.5rem; font-size: 0.88rem; }
+  .dont-box { background: #fdf2f2; border: 1px solid #f5c6c6; }
+  .dont-box strong { color: var(--red); display: block; margin-bottom: 0.5rem; font-size: 0.88rem; }
+  .do-box li, .dont-box li { color: var(--gray-800); }
+  .do-box p, .dont-box p { color: var(--gray-800); }
+
+  /* ===== BLOCKQUOTE ===== */
+  blockquote {
+    border-left: 4px solid var(--green-500);
+    margin: 1.2rem 0;
+    padding: 0.9rem 1.3rem;
+    background: var(--gray-300);
+    font-style: italic;
+    color: var(--gray-800);
+    font-size: 0.95rem;
+    border-radius: 0 6px 6px 0;
+  }
+  blockquote cite { display: block; font-size: 0.8rem; margin-top: 0.4rem; font-style: normal; color: var(--gray-700); }
+
+  /* ===== TIMELINE ===== */
+  .timeline { margin: 1.5rem 0; }
+  .timeline-item {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+  }
+  .timeline-year {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--green-700);
+    min-width: 90px;
+    padding-top: 0.1rem;
+  }
+  .timeline-content { flex: 1; }
+  .timeline-content h4 { margin-top: 0; color: var(--green-800); }
+
+  /* ===== SOURCES ===== */
+  .sources-list {
+    font-size: 0.72rem;
+    color: var(--gray-700);
+    column-count: 2;
+    column-gap: 2rem;
+    line-height: 1.7;
+  }
+  .sources-list a { color: var(--green-700); text-decoration: none; word-break: break-all; }
+  .sources-list a:hover { text-decoration: underline; }
+
+  /* ===== FOOTER ===== */
+  .footer-section {
+    background: var(--green-900);
+    color: rgba(255,255,255,0.55);
+    padding: 2.5rem 0;
+    font-size: 0.78rem;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+  .footer-logo img { height: 22px; filter: brightness(0) invert(0.6); display: block; margin: 0 auto 0.8rem; }
+
+  /* ===== TAB-BAR (DRIE TABS) ===== */
+  .tab-bar {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: var(--green-900);
+    border-bottom: 3px solid var(--green-500);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  }
+  .tab-bar-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+  .tab-button {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.55);
+    text-align: left;
+    padding: 1.1rem 1.6rem;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s;
+    border-bottom: 4px solid transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .tab-button .tab-num {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--green-500);
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+  .tab-button .tab-title {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1.35rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.1;
+    letter-spacing: 0.3px;
+  }
+  .tab-button .tab-sub {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+    margin-top: 0.15rem;
+  }
+  .tab-button:hover { background: rgba(255,255,255,0.05); }
+  .tab-button:hover .tab-title { color: var(--white); }
+  .tab-button.active {
+    background: var(--green-700);
+    border-bottom-color: var(--green-500);
+  }
+  .tab-button.active .tab-num { opacity: 1; }
+  .tab-button.active .tab-title { color: var(--white); }
+  .tab-button.active .tab-sub { color: rgba(255,255,255,0.85); }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+  .tab-hint {
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--green-500);
+    color: var(--green-900);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    pointer-events: none;
+    animation: pulse-hint 2s ease-in-out infinite;
+  }
+  @keyframes pulse-hint {
+    0%, 100% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.06); }
+  }
+  .tab-button.active .tab-hint { display: none; }
+  .toc-bar { top: 0; }
+
+  /* ===== VERDIEPING: HERO ===== */
+  .v-intro {
+    background: linear-gradient(140deg, var(--green-800) 0%, var(--green-700) 100%);
+    color: var(--white);
+    padding: 3rem 0 3.5rem;
+  }
+  .v-intro .container { max-width: 900px; }
+  .v-intro .v-label {
+    font-size: 0.72rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--green-500);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+  }
+  .v-intro h1 {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 2.8rem;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+  .v-intro .v-lead {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.88);
+    max-width: 720px;
+    line-height: 1.65;
+    margin-bottom: 1.4rem;
+  }
+  .v-intro .v-cta {
+    display: inline-block;
+    background: var(--green-500);
+    color: var(--green-900);
+    padding: 0.7rem 1.4rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+  }
+  .v-intro .v-cta:hover { background: var(--green-400); }
+
+  /* ===== VERDIEPING: 3-KOLOM KRACHTENVELD ===== */
+  .three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .three-col .col {
+    background: var(--white);
+    border: 1px solid var(--gray-500);
+    border-top: 4px solid var(--green-700);
+    border-radius: 0 0 8px 8px;
+    padding: 1.3rem;
+  }
+  .three-col .col h4 {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--green-800);
+    margin-bottom: 0.6rem;
+  }
+  .three-col .col ul { font-size: 0.86rem; padding-left: 1.2rem; margin: 0; }
+  .three-col .col li { margin: 0.4rem 0; }
+  .three-col .col-verdwijnt { border-top-color: #e07000; }
+  .three-col .col-verdwijnt h4 { color: #e07000; }
+  .three-col .col-ontstaat { border-top-color: var(--green-500); }
+  .three-col .col-blijft { border-top-color: var(--green-700); }
+
+  /* ===== VERDIEPING: FUNDAMENT 5 KAARTEN ===== */
+  .fundament-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+  }
+  .fundament-card {
+    background: var(--white);
+    border: 1px solid var(--gray-500);
+    border-top: 4px solid var(--green-700);
+    border-radius: 0 0 8px 8px;
+    padding: 1.1rem 0.9rem;
+    text-align: center;
+  }
+  .fundament-card .num {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: var(--green-700);
+    line-height: 1;
+  }
+  .fundament-card h5 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--green-800);
+    margin: 0.5rem 0 0.4rem;
+  }
+  .fundament-card p {
+    font-size: 0.76rem;
+    color: var(--gray-800);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* ===== VERDIEPING: VERGELIJKINGSTABEL PADEN ===== */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.7rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .compare-card {
+    background: var(--white);
+    border: 1px solid var(--gray-500);
+    border-top: 5px solid var(--green-700);
+    border-radius: 0 0 8px 8px;
+    padding: 1rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .compare-card.aanvullend { border-top-color: var(--green-500); border-top-style: dashed; }
+  .compare-card .pad-num {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--green-700);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .compare-card.aanvullend .pad-num { color: var(--green-500); }
+  .compare-card h5 {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--green-800);
+    line-height: 1.15;
+  }
+  .compare-card .kern {
+    font-size: 0.74rem;
+    color: var(--gray-800);
+    line-height: 1.4;
+    flex: 1;
+  }
+  .compare-card .meta {
+    font-size: 0.7rem;
+    border-top: 1px solid var(--gray-500);
+    padding-top: 0.5rem;
+    color: var(--gray-700);
+    line-height: 1.5;
+  }
+  .compare-card .meta strong { color: var(--green-800); display: block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.3px; }
+  .compare-card .pad-link {
+    background: var(--green-700);
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.45rem 0.7rem;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 0.4rem;
+  }
+  .compare-card .pad-link:hover { background: var(--green-800); }
+
+  /* ===== VERDIEPING: ACCORDION-CARDS PADEN ===== */
+  .pad-accordion { margin: 1.2rem 0; }
+  .pad-item {
+    background: var(--white);
+    border: 1px solid var(--gray-500);
+    border-left: 5px solid var(--green-700);
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+    overflow: hidden;
+  }
+  .pad-item.aanvullend { border-left-color: var(--green-500); border-left-style: dashed; }
+  .pad-header {
+    width: 100%;
+    background: var(--white);
+    border: none;
+    padding: 1.1rem 1.4rem;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: inherit;
+    transition: background 0.15s;
+  }
+  .pad-header:hover { background: var(--gray-300); }
+  .pad-header .pad-numlabel {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--green-700);
+    background: var(--gray-300);
+    padding: 0.25rem 0.7rem;
+    border-radius: 6px;
+    min-width: 56px;
+    text-align: center;
+    line-height: 1;
+  }
+  .pad-item.aanvullend .pad-header .pad-numlabel { background: #e8eaff; color: var(--green-500); }
+  .pad-header .pad-titles { flex: 1; }
+  .pad-header .pad-name {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--green-800);
+    line-height: 1.1;
+  }
+  .pad-header .pad-tagline {
+    font-size: 0.82rem;
+    color: var(--gray-800);
+    margin-top: 0.2rem;
+    line-height: 1.4;
+  }
+  .pad-header .pad-toggle {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--green-700);
+    width: 32px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .pad-item.open .pad-header .pad-toggle { transform: rotate(45deg); }
+  .pad-body {
+    display: none;
+    padding: 0.4rem 1.4rem 1.6rem 1.4rem;
+    border-top: 1px solid var(--gray-500);
+    background: var(--gray-300);
+  }
+  .pad-item.open .pad-body { display: block; }
+  .pad-body h5 {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: var(--green-800);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 1.1rem 0 0.4rem;
+  }
+  .pad-body h5:first-child { margin-top: 0.6rem; }
+  .pad-body p, .pad-body ul { font-size: 0.88rem; }
+  .pad-body ul { padding-left: 1.4rem; }
+  .pad-body .leerpad-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem;
+    margin: 0.5rem 0;
+  }
+  .pad-body .leerblok {
+    background: var(--white);
+    border: 1px solid var(--gray-500);
+    border-top: 3px solid var(--green-500);
+    border-radius: 0 0 6px 6px;
+    padding: 0.7rem 0.8rem;
+  }
+  .pad-body .leerblok .periode {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    color: var(--green-700);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+  }
+  .pad-body .leerblok p { font-size: 0.78rem; line-height: 1.45; margin: 0; color: var(--gray-800); }
+  .pad-body .case-block {
+    background: #edf7f1;
+    border-left: 4px solid var(--green-700);
+    padding: 0.9rem 1.1rem;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.85rem;
+    color: var(--gray-900);
+    margin: 0.4rem 0;
+  }
+  .pad-body .case-block strong { color: var(--green-800); }
+  .pad-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    margin: 0.5rem 0 1rem;
+  }
+  .pad-control-btn {
+    background: var(--green-700);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .pad-control-btn:hover { background: var(--green-800); }
+  .pad-control-btn.secondary { background: var(--white); color: var(--green-700); border: 1px solid var(--green-700); }
+  .pad-control-btn.secondary:hover { background: var(--gray-300); }
+
+  /* ===== VERDIEPING: ZELFASSESSMENT WIDGET ===== */
+  .assessment-widget {
+    background: var(--white);
+    border: 2px solid var(--green-700);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 20px rgba(0,97,49,0.08);
+  }
+  .assessment-widget .a-intro {
+    font-size: 0.92rem;
+    color: var(--gray-800);
+    margin-bottom: 1.5rem;
+  }
+  .assessment-widget .a-disclaimer {
+    font-size: 0.75rem;
+    color: var(--gray-700);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .assessment-question {
+    background: var(--gray-300);
+    border-left: 4px solid var(--green-500);
+    padding: 1rem 1.2rem;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 0.9rem;
+  }
+  .assessment-question .qnum {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    color: var(--green-700);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+  }
+  .assessment-question .qtext {
+    font-size: 0.92rem;
+    color: var(--gray-900);
+    margin-bottom: 0.7rem;
+    line-height: 1.5;
+  }
+  .assessment-scale {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.4rem;
+  }
+  .assessment-scale label {
+    background: var(--white);
+    border: 1px solid var(--gray-500);
+    border-radius: 6px;
+    padding: 0.5rem 0.3rem;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.72rem;
+    color: var(--gray-800);
+    transition: all 0.15s;
+    line-height: 1.2;
+  }
+  .assessment-scale label:hover { border-color: var(--green-700); background: #edf7f1; }
+  .assessment-scale input[type="radio"] { display: none; }
+  .assessment-scale input[type="radio"]:checked + span {
+    display: block;
+  }
+  .assessment-scale label.selected {
+    background: var(--green-700);
+    border-color: var(--green-700);
+    color: var(--white);
+    font-weight: 600;
+  }
+  .assessment-submit {
+    background: var(--green-700);
+    color: var(--white);
+    border: none;
+    padding: 0.9rem 1.8rem;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  .assessment-submit:hover { background: var(--green-800); }
+  .assessment-submit:disabled { background: var(--gray-600); cursor: not-allowed; }
+  .assessment-result {
+    display: none;
+    background: linear-gradient(135deg, var(--green-800), var(--green-700));
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+  }
+  .assessment-result.show { display: block; }
+  .assessment-result h4 {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--green-500);
+    margin-bottom: 0.6rem;
+  }
+  .assessment-result .result-pad {
+    background: rgba(255,255,255,0.1);
+    border-left: 4px solid var(--green-500);
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .assessment-result .result-pad .rank {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 0.8rem;
+    color: var(--green-500);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .assessment-result .result-pad .name {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--white);
+    margin: 0.2rem 0;
+  }
+  .assessment-result .result-pad .score {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.85);
+  }
+  .assessment-result .result-pad a {
+    display: inline-block;
+    margin-top: 0.6rem;
+    background: var(--green-500);
+    color: var(--green-900);
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+  .assessment-result .reset-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.5);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.78rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  .assessment-result .reset-btn:hover { background: rgba(255,255,255,0.12); }
+
+  /* ===== VERDIEPING: DATE-CALLOUT ===== */
+  .date-callout {
+    background: #2d1215;
+    color: var(--white);
+    padding: 1.4rem 1.6rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--green-700);
+    margin: 1.2rem 0;
+  }
+  .date-callout strong { color: var(--white); display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.4rem; opacity: 0.85; }
+  .date-callout .dates { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.6rem; }
+  .date-callout .date-item { background: rgba(0,0,0,0.2); padding: 0.8rem 1rem; border-radius: 6px; }
+  .date-callout .date-item .when { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--green-700); }
+  .date-callout .date-item .what { font-size: 0.82rem; color: rgba(255,255,255,0.88); margin-top: 0.2rem; }
+
+  /* ===== T-PROFIEL combinaties ===== */
+  .tprofiel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin: 1rem 0;
+  }
+  .tprofiel-card {
+    background: var(--white);
+    border: 1px solid var(--gray-500);
+    border-left: 4px solid var(--green-700);
+    border-radius: 0 6px 6px 0;
+    padding: 0.9rem 1.1rem;
+  }
+  .tprofiel-card .combo {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: var(--green-800);
+    margin-bottom: 0.3rem;
+  }
+  .tprofiel-card .desc { font-size: 0.82rem; color: var(--gray-800); line-height: 1.5; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .hero-title { font-size: 2.4rem; }
+    .hero-content { padding: 2rem 1.5rem; }
+    .container { padding: 0 1.5rem; }
+    .stat-row, .stat-row-3 { grid-template-columns: 1fr 1fr; }
+    .week-plan { grid-template-columns: 1fr; }
+    .do-dont { grid-template-columns: 1fr; }
+    .system-grid { grid-template-columns: 1fr; }
+    .sources-list { column-count: 1; }
+    .toc-bar { display: none; }
+    .tab-bar-inner { grid-template-columns: 1fr; }
+    .tab-button { padding: 0.9rem 1.2rem; }
+    .tab-button .tab-title { font-size: 1.1rem; }
+    .tab-hint { display: none !important; }
+    .v-intro h1 { font-size: 2rem; }
+    .three-col, .fundament-grid, .compare-grid { grid-template-columns: 1fr; }
+    .pad-body .leerpad-grid { grid-template-columns: 1fr 1fr; }
+    .tprofiel-grid { grid-template-columns: 1fr; }
+    .date-callout .dates { grid-template-columns: 1fr; }
+    .assessment-scale { grid-template-columns: 1fr 1fr; }
+    .assessment-widget { padding: 1.2rem; }
+  }
+
+  /* ===== VOORLEESFUNCTIE (TTS) ===== */
+  .tts-bar {
+    position: fixed;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    background: var(--green-800);
+    color: var(--white);
+    border-radius: 999px;
+    padding: 0.45rem 0.55rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.28);
+    z-index: 200;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    max-width: calc(100vw - 2rem);
+  }
+  .tts-bar.collapsed .tts-expand { display: none; }
+  .tts-bar .tts-expand { display: flex; align-items: center; gap: 0.4rem; }
+  .tts-bar button {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 999px;
+    padding: 0.35rem 0.7rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.78rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .tts-bar button:hover { background: rgba(255,255,255,0.14); }
+  .tts-bar button.active {
+    background: var(--green-500);
+    color: var(--green-900);
+    border-color: var(--green-500);
+    font-weight: 700;
+  }
+  .tts-bar .tts-main {
+    background: var(--green-500);
+    color: var(--green-900);
+    border-color: var(--green-500);
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+  .tts-bar .tts-main:hover { background: #c2f57a; }
+  .tts-bar select {
+    background: rgba(255,255,255,0.08);
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 999px;
+    padding: 0.32rem 0.7rem;
+    font-family: inherit;
+    font-size: 0.76rem;
+    max-width: 180px;
+  }
+  .tts-bar select option { background: var(--green-800); color: var(--white); }
+  .tts-bar .tts-status {
+    opacity: 0.85;
+    font-size: 0.72rem;
+    white-space: nowrap;
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .tts-bar .tts-speed-group { display: flex; gap: 0.25rem; }
+  .tts-bar .tts-speed-group button { padding: 0.3rem 0.55rem; font-size: 0.72rem; }
+  .tts-popover {
+    position: fixed;
+    bottom: 4.8rem;
+    right: 1.2rem;
+    background: var(--white);
+    color: var(--gray-900);
+    border: 1px solid var(--green-700);
+    border-radius: 10px;
+    padding: 1.1rem 1.2rem 1rem;
+    box-shadow: 0 14px 34px rgba(0,0,0,0.22);
+    min-width: 280px;
+    max-width: calc(100vw - 2rem);
+    z-index: 201;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+  }
+  .tts-popover .close {
+    float: right;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--gray-700);
+    font-size: 1.05rem;
+    padding: 0;
+    line-height: 1;
+  }
+  .tts-popover label { display: block; margin-bottom: 0.8rem; color: var(--gray-900); }
+  .tts-popover label strong {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--green-700);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+  }
+  .tts-popover select {
+    width: 100%;
+    padding: 0.45rem 0.55rem;
+    border: 1px solid var(--gray-500);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.82rem;
+    background: var(--white);
+  }
+  .tts-popover .hint {
+    font-size: 0.72rem;
+    color: var(--gray-700);
+    font-style: italic;
+    margin-top: 0.4rem;
+    line-height: 1.45;
+  }
+  /* Highlight van actieve zin tijdens voorlezen.
+     Alliander oranje, subtiel maar herkenbaar op elke achtergrond
+     (inclusief de lichtgroene callouts), verdwijnt zodra voorlezen stopt. */
+  ::highlight(tts-active) {
+    background-color: rgba(255, 120, 0, 0.38);
+    color: inherit;
+  }
+  .tts-active-fallback {
+    background-color: rgba(255, 120, 0, 0.38);
+    border-radius: 3px;
+    padding: 0.05em 0.1em;
+  }
+  @media (max-width: 820px) {
+    .tts-bar .tts-speed-group { display: none; }
+    .tts-bar .tts-status { display: none; }
+    .tts-bar select { max-width: 120px; }
+  }
+  @media (max-width: 520px) {
+    .tts-bar { bottom: 0.6rem; right: 0.6rem; }
+    .tts-bar select { display: none; }
+  }
+  @media print {
+    .tts-bar, .tts-popover { display: none !important; }
+    ::highlight(tts-active) { background-color: transparent; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="hero-section">
+  <div class="hero-content">
+    <span class="hero-logo">REALISATIE</span>
+    <div class="hero-label">Visiedocument &mdash; Directeur Realisatie Qirion &mdash; Martijn Pit</div>
+    <h1 class="hero-title">Bouwen voor<br>een net dat niet wacht</h1>
+    <p class="hero-subtitle">Strategische personeelsplanning voor Realisatie in een markt die explodeert, een arbeidsmarkt die krimpt, en een Engineering-pipeline die door AI sneller produceert dan Realisatie kan uitvoeren. Mei 2026.</p>
+  </div>
+</div>
+
+<!-- ===== TAB-BAR ===== -->
+<div class="tab-bar">
+  <div class="tab-bar-inner">
+    <button class="tab-button active" data-tab="opgave" type="button">
+      <span class="tab-num">01 &mdash; De Opgave</span>
+      <span class="tab-title">Wat staat ons te doen</span>
+      <span class="tab-sub">Markt, scheefgroei, dubbele druk</span>
+    </button>
+    <button class="tab-button" data-tab="spp" type="button">
+      <span class="tab-num">02 &mdash; Strategische Personeelsplanning</span>
+      <span class="tab-title">Het mensenbeeld 2030</span>
+      <span class="tab-sub">Rollen, arbeidsmarkt, scenario's</span>
+    </button>
+    <button class="tab-button" data-tab="bouwstenen" type="button">
+      <span class="tab-num">03 &mdash; Bouwstenen &amp; Routekaart</span>
+      <span class="tab-title">Wat de Directeur moet kiezen</span>
+      <span class="tab-sub">Bouwstenen, 90-dagen plan, versterking</span>
+    </button>
+  </div>
+</div>
+
+<!-- ===== TAB 01: DE OPGAVE ===== -->
+<div id="tab-opgave" class="tab-content active">
+
+<!-- ===== TOC ===== -->
+<div class="toc-bar">
+  <div class="container">
+    <a href="#methode">Verantwoording</a>
+    <a href="#samenvatting">Samenvatting</a>
+    <a href="#speelveld">Het speelveld</a>
+    <a href="#tennet">TenneT-pipeline</a>
+    <a href="#scheefgroei">Scheefgroei</a>
+    <a href="#heatmap">AI-heatmap</a>
+    <a href="#dubbel">Dubbele druk</a>
+    <a href="#supply">Supply chain</a>
+    <a href="#krachtenveld">Krachtenveld</a>
+  </div>
+</div>
+
+<!-- ===== METHODOLOGISCHE VERANTWOORDING ===== -->
+<section class="section-light" id="methode" style="padding: 1.8rem 1.5rem; border-bottom: 2px solid var(--green-700);">
+  <div class="container" style="max-width: 900px;">
+    <h2 style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; color: var(--green-800); font-size: 1.2rem; margin-bottom: 0.6rem;">Methodologische verantwoording</h2>
+    <p style="font-size: 0.88rem; color: var(--gray-800); line-height: 1.7; margin-bottom: 0.6rem;">Dit rapport combineert <strong>drie databronnen</strong>: extern openbare sectorinformatie (TenneT investeringsplannen, Alliander jaarverslag, WENB-arbeidsmarktcijfers, openbare vacatureteksten), de eerder opgeleverde Qirion marktanalyse (macro, arbeidsmarkt, rollen, supply chain), en de interne Alliander AI-impactheatmap met scores voor 82 Realisatie-functies.</p>
+    <p style="font-size: 0.88rem; color: var(--gray-800); line-height: 1.7; margin-bottom: 0.6rem;">Wat dit rapport <strong>niet</strong> bevat: interne Qirion-cijfers over groeidoelstellingen, verhouding eigen FTE versus aannemersvolume, leeftijdsopbouw of investeringsruimte. Die zeven variabelen staan in Tab 03 (Versterking &amp; validatie) als gesprek voor de directie. Het rapport is daarmee bewust een <strong>gesprek-opener</strong>, niet een vaststaand beleidsstuk.</p>
+    <ul style="font-size: 0.85rem; color: var(--gray-800); line-height: 1.7; padding-left: 1.4rem;">
+      <li>Alle externe claims zijn met bron gemarkeerd. Geen primair onderzoek bij Realisatie-medewerkers afgenomen.</li>
+      <li>Scenario's zijn doorgerekend op publieke macrocijfers; interne validatie is voorzien als vervolgstap.</li>
+      <li>AI-impactscores zijn gespreksopener, niet voorspelling. Functiehuis is generiek; specifieke rolprofielen kunnen afwijken.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== SAMENVATTING ===== -->
+<div class="summary-section" id="samenvatting">
+  <div class="container">
+    <h2>Samenvatting voor de drukke directeur</h2>
+    <p><strong>De opgave waar Realisatie voor staat is niet op te lossen door meer mensen aan te nemen.</strong> Het werkpakket groeit explosief (TenneT zet alleen al &euro;50 mrd in voor 2026-2040), de arbeidsmarkt is fundamenteel krap, en uitgerekend de uitvoerings-rollen die het echte werk doen zijn de rollen waar AI geen versnelling biedt. Tegelijk versnelt Engineering wel door AI, waardoor de pipeline van werkpakketten sneller groeit dan de capaciteit om ze uit te voeren. Dat is de kernspanning waar deze visie zich op richt.</p>
+    <ul>
+      <li>Realisatie telt ongeveer 738 medewerkers (circa 714 FTE) en is daarmee meer dan de helft van Qirion en staat voor een fors groeiend werkpakket, gedreven door TenneT-investeringen en netcongestie-versnelling</li>
+      <li><strong>60% van TenneT-uitbreidingsprojecten loopt nu al gemiddeld 2,5 jaar uit</strong> &mdash; niet door techniek maar door capaciteit en planning <span class="ref">(TenneT Investeringsplan Net op Land 2025)</span></li>
+      <li>AI-impactscore Engineering 6,47 versus Realisatie 5,86. Binnen Realisatie scoort de fysieke uitvoering (Technicus, Uitvoerder Hoogspanning, Klimmer) <strong>2,2-2,8</strong> &mdash; AI lost dit niet op <span class="ref">(Alliander AI-impactanalyse 2025)</span></li>
+      <li>Netbeheer NL heeft <strong>28.000 extra medewerkers</strong> nodig 2024-2030; <strong>40% van gespecialiseerde HS-engineers</strong> gaat in dezelfde periode met pensioen <span class="ref">(WENB 2023, CIGRE 2023)</span></li>
+      <li>Heijmans bouwt prefab-fabriek <strong>Krachtveld in Ede</strong>: 480 modules, 120 HS-velden in 5 jaar, 30% kortere bouwtijd. Markt beweegt &mdash; vraag is of Qirion het tempo bijhoudt <span class="ref">(Aannemervak 2025, Infrasite dec 2025)</span></li>
+      <li>Bij scenario B (basis, kans ~55%) wordt het werkpakket <strong>niet volledig opgeleverd</strong>. Directie moet nu kiezen welke projecten prioriteit krijgen</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== 1. HET SPEELVELD ===== -->
+<div class="section" id="speelveld">
+  <div class="container">
+    <h2>1. Het speelveld &mdash; Qirion en Realisatie in 2026</h2>
+
+    <p>Qirion ontwerpt, bouwt en onderhoudt het hoog- en middenspanningsnet, primair voor Liander en TenneT in het Liander-verzorgingsgebied. Realisatie telt op dit moment circa 714 FTE (ongeveer 738 medewerkers) en vormt daarmee meer dan de helft van Qirion. Publieke bronnen geven uiteenlopende FTE-cijfers voor Qirion als geheel (van 700 bij Dutch Power tot 950 in oudere vacatureteksten); dat publieke beeld loopt achter op de actuele situatie en is een signaal dat de organisatie al hard groeit.</p>
+
+    <div class="stat-row">
+      <div class="stat-card"><div class="number">~714</div><div class="label">FTE Realisatie nu, &gt;50% van Qirion <span class="ref">(intern indicatie)</span></div></div>
+      <div class="stat-card"><div class="number">6,47<br>5,86</div><div class="label">AI-impactscore Engineering vs. Realisatie &mdash; de scheefgroei in &eacute;&eacute;n cijfer <span class="ref">(Alliander AI-impactanalyse 2025)</span></div></div>
+      <div class="stat-card"><div class="number">60%</div><div class="label">TenneT-uitbreidingsprojecten lopen 2,5 jaar uit op planning <span class="ref">(TenneT 2025)</span></div></div>
+      <div class="stat-card"><div class="number">610+</div><div class="label">openstaande vacatures Qirion <span class="ref">(LinkedIn, mei 2026)</span></div></div>
+    </div>
+
+    <h3>De groei-opgave als startpunt</h3>
+    <p>Realisatie moet de komende jaren een sterk groeiend werkpakket bedienen, gedreven door TenneT- en Liander-investeringen, netcongestie-versnelling en de energietransitie-agenda. Tegelijk laat de arbeidsmarkt niet toe om die groei lineair in FTE op te lossen. Productiviteit per FTE moet structureel omhoog &mdash; maar zoals deze visie laat zien, valt die productiviteitswinst grotendeels buiten het veld. De Directeur Realisatie staat daarmee voor een dubbele opgave: groeien in capaciteit &eacute;n de werkmethode fundamenteel anders inrichten.</p>
+
+    <h3>De afdeling als zwaartepunt</h3>
+    <p>De zes clusters in Realisatie (uitvoering &amp; veld, engineering &amp; technisch, project &amp; portfolio, planning &amp; coordinatie, logistiek &amp; support, advies &amp; specialisme) verschillen sterk in hun blootstelling aan technologie, arbeidsmarktdruk en omzetgroei. De rollen die het kritieke vakwerk doen &mdash; klimmers, technici hoogspanning, uitvoerders, werkverantwoordelijken, veiligheidstoezichthouders &mdash; zijn precies de rollen waar arbeidsmarkt het krapst is &eacute;n waar AI het minst doet. Dat patroon bepaalt de hele visie.</p>
+
+    <div class="callout callout-insight"><strong>Het zwaartepunt verschuift</strong>Realisatie is niet langer de uitvoerings-arm achter Engineering; het is de capaciteits-bottleneck van de hele transitie binnen Qirion. Strategische keuzes hier bepalen wat Qirion als geheel kan leveren.</div>
+  </div>
+</div>
+
+<!-- ===== 2. TENNET PIPELINE ===== -->
+<div class="section section-alt" id="tennet">
+  <div class="container">
+    <h2>2. De TenneT-pipeline en de macro-opgave</h2>
+
+    <p>De externe opgave is publiek en hard onderbouwd. TenneT's eigen investeringsplan voor Net op Land 2026-2040 omvat <strong>circa &euro;50 mrd</strong>, waarvan &euro;13 mrd onshore in de komende tien jaar en &euro;9 mrd voor het offshore-net <span class="ref">(TenneT Investeringsplan Net op Land, consultatieversie nov 2025)</span>. Het plan bevat <strong>meer dan 400 projecten</strong> en realisatie van <strong>40+ nieuwe hoogspanningsstations</strong>.</p>
+
+    <div class="stat-row">
+      <div class="stat-card"><div class="number">&euro;13 mrd</div><div class="label">TenneT onshore investering 2025-2034 <span class="ref">(TenneT 2025)</span></div></div>
+      <div class="stat-card"><div class="number">&euro;9 mrd</div><div class="label">TenneT offshore investering komende 10 jaar <span class="ref">(TenneT 2025)</span></div></div>
+      <div class="stat-card"><div class="number">400+</div><div class="label">projecten in TenneT-investeringsplan 2026-2040 <span class="ref">(TenneT 2025)</span></div></div>
+      <div class="stat-card"><div class="number">60%</div><div class="label">van uitbreidingsprojecten levert 2,5 jaar later op dan gepland <span class="ref">(TenneT 2025)</span></div></div>
+    </div>
+
+    <h3>Alliander zelf als volume-driver</h3>
+    <p>Alliander rapporteerde in 2025 <strong>&euro;3,3 mrd operationele opbrengsten</strong> en &euro;219m netto winst <span class="ref">(Alliander Jaarverslag 2025)</span>. In 2025 werd 2.600 km kabel gelegd, 2.200 trafohuisjes verbouwd of gebouwd, en 316 km gasleiding gelegd. Vooruitkijkend tien jaar gaat het om <strong>37.000 km kabel, 25.000 trafohuisjes en 1.600 km gasleiding</strong> <span class="ref">(Alliander Jaarverslag 2025)</span> &mdash; werk dat voor een belangrijk deel via Qirion en partner-aannemers tot realisatie moet komen.</p>
+
+    <h3>Netcongestie als versnellingsdruk</h3>
+    <p>Sinds 2024 is netcongestie operationeel op vrijwel heel Nederland. Wachttijden voor nieuwe grootverbruikersaansluitingen liggen op <strong>5-10 jaar</strong> in congestiegebieden <span class="ref">(TenneT, Liander)</span>. Het Landelijk Actieprogramma Netcongestie (LAN) coordineert sinds 2023 versnellingsmaatregelen: standaardisering van stationontwerpen, vergunningsversnelling, alternatieve aansluitroutes. Dat is de motor achter de prefab-shift in de aannemersmarkt &mdash; en zet directe druk op de uitvoeringscapaciteit.</p>
+
+    <h3>De HVDC-laag &mdash; een specialistisch werkpakket apart</h3>
+    <p>Voor de 21 GW wind op zee in 2030 (50-70 GW in 2050) komen <strong>HVDC-aanlandingen in 2 GW-modules</strong>, met convertergebouwen van meerdere hectaren, 525 kV DC-kabel en 380 kV AC-uitkoppeling. Aansluitpunten in Eemshaven, Maasvlakte, Borssele en IJmuiden-Ver. HVDC-competentie in Nederland is schaars buiten OEM's (Siemens Energy, Hitachi Energy) <span class="ref">(TenneT 2GW publicaties, CIGRE NL)</span>.</p>
+
+    <div class="callout callout-warning"><strong>De uitloop is geen toeval</strong>Dat 60% van TenneT-uitbreidingsprojecten 2,5 jaar uitloopt is geen technisch maar een capaciteits- en planningsprobleem. Vergunningen, integratie, materialen, en uitvoering &mdash; alle vier raken de Realisatie-keten direct. De getallen liegen niet: de pipeline is groter dan wat de keten nu aan kan.</div>
+  </div>
+</div>
+
+<!-- ===== 3. SCHEEFGROEI ===== -->
+<div class="section section-dark" id="scheefgroei">
+  <div class="container">
+    <h2>3. De Engineering-Realisatie scheefgroei &mdash; het kernframe</h2>
+
+    <p>De interne AI-impactanalyse van Alliander geeft een ongemakkelijke bevestiging van wat de markt suggereert. Engineering bij Qirion scoort gemiddeld <strong>6,47</strong> op AI-impactscore (30 functies). Realisatie scoort gemiddeld <strong>5,86</strong> (82 functies). Engineering kan dus meer profiteren van AI dan Realisatie. Maar het verschil is veel scherper als we binnen Realisatie kijken.</p>
+
+    <h3>De data: engineering versnelt het hardst</h3>
+    <p>Externe onderzoeken naar AI-productiviteit in engineering-werk wijzen consistent op significante throughput-stijgingen: <strong>26% meer taken voltooid door kenniswerkers met AI-tooling</strong> <span class="ref">(MIT Sloan / SSRN 2025)</span>, <strong>30-50% kortere storingsduur</strong> via AI-foutdetectie <span class="ref">(IEA 2025)</span>, <strong>30% minder downtime en 40% lagere onderhoudskosten</strong> via predictive maintenance <span class="ref">(Tandfonline 2025)</span>. Bij vergelijkbare netbeheerder Enexis worden inmiddels structureel Senior GenAI Engineers geworven &mdash; niet als experiment, als functie <span class="ref">(Enexis werkenbij 2025)</span>.</p>
+
+    <h3>Concrete tools die nu live komen</h3>
+    <p>De tooling die Engineering versnelt is geen toekomstmuziek: Siemens Digital Twin Composer beschikbaar medio 2026, ABB Ability Smart Grid actief, Schneider One Digital Grid Platform sinds maart 2025, Hitachi PCM600 &amp; IET600 als eerste IEC 61850 Ed. 2.1-gecertificeerde commissioning-tooling <span class="ref">(Siemens / ABB / Schneider / Hitachi 2025-2026)</span>. Engineers en werkvoorbereiders zullen <strong>30-50% van standaardwerk</strong> kunnen laten genereren door AI binnen 3-5 jaar.</p>
+
+    <h3>De mismatch in &eacute;&eacute;n zin</h3>
+    <div class="callout-critical"><strong>De pijnlijke realiteit:</strong> AI versnelt het kantoor van Realisatie, niet het veld. Engineering kan straks meer werkpakketten produceren, maar de fysieke uitvoering (klimmers, monteurs, uitvoerders) blijft mensenwerk &mdash; en die mensen zijn niet te vinden op de huidige arbeidsmarkt.</div>
+
+    <p>Met andere woorden: de bottleneck verschuift van het ontwerp naar de uitvoering. Dat betekent <strong>niet</strong> dat Engineering klaar is en Realisatie het probleem heeft. Het betekent dat de hele waardestroom hervormd moet worden, met Realisatie aan het stuur omdat dat het bredere knelpunt is.</p>
+
+    <h3>Wat dit betekent voor de werkmethode</h3>
+    <ul>
+      <li><strong>Bij gelijkblijvend operating model:</strong> AI-versnelling in Engineering leidt tot stuwmeer aan werkpakketten dat Realisatie niet kan opvangen. Pipeline-doorlooptijden lopen op, projecten blijven liggen.</li>
+      <li><strong>Bij synchrone versnelling:</strong> Realisatie investeert in technologieen die het veld inrichten op snelle uitvoering (prefab, drone-inspectie, digital twin commissioning, modulaire werkmethodes) en koppelt aannemers strategisch.</li>
+      <li><strong>Bij prioritering:</strong> directie kiest expliciet welke werkpakketten doorgaan en welke wachten &mdash; in plaats van impliciet via uitloop.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== 4. AI-HEATMAP ===== -->
+<div class="section" id="heatmap">
+  <div class="container">
+    <h2>4. De AI-heatmap als analyselaag &mdash; vier zones binnen Realisatie</h2>
+
+    <p>De Alliander AI-impactanalyse gebruikt een vast framework: per functie identificeert een AI-model de kerntaken, scoort de automatiseringsgraad, weegt het belang van elke kerntaak, en levert een impactscore tussen 0 en 10. Voor Qirion zijn <strong>158 functies geanalyseerd</strong>, waarvan 82 in Realisatie. De score zegt wel iets over theoretische blootstelling aan AI-taken; de score zegt niets over wanneer of of dat ook bij Alliander gaat gebeuren. De analyse is bewust contextvrij &mdash; precies daarom is hij waardevol als startpunt voor het gesprek.</p>
+
+    <h3>Realisatie versus de rest van Qirion</h3>
+    <table>
+      <thead><tr><th>Onderdeel</th><th>Gem. AI-impactscore</th><th># functies</th></tr></thead>
+      <tbody>
+        <tr><td>OT (meting &amp; beveiliging)</td><td>7,01</td><td>19</td></tr>
+        <tr><td>Kwaliteits- en Maintenance Management</td><td>6,99</td><td>15</td></tr>
+        <tr><td>Engineering, Ruimte &amp; Recht</td><td>6,47</td><td>30</td></tr>
+        <tr><td>Veranderteam</td><td>6,16</td><td>8</td></tr>
+        <tr><td><strong>Realisatie</strong></td><td><strong>5,86</strong></td><td><strong>82</strong></td></tr>
+        <tr><td>Qirion Hoogspanning algemeen</td><td>5,00</td><td>4</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Vier AI-impactzones binnen Realisatie</h3>
+    <p>Niet elke Realisatie-functie kent dezelfde dynamiek. De impactanalyse legt vier zones bloot, en die zones bepalen welke strategie nodig is om de capaciteit op orde te krijgen.</p>
+
+    <div class="system-grid">
+      <div class="system-card">
+        <h4>Zone 1 &mdash; Zeer hoog (score 8-9)</h4>
+        <div class="system-role">Pak de productiviteitswinst snel</div>
+        <p style="font-size: 0.88rem;">Administratief Medewerker (9,1), Mdw Projectadministratie (9,0), Digitalisering Professional (8,5), Tactisch Planner (8,4), Werkcoordinator (8,3), Werkvoorbereider (8,3), Engineer (8,3), Engineer Technisch Specialist (8,2), Projectcoordinator (8,1).</p>
+        <p style="font-size: 0.85rem; color: var(--gray-800); margin-top: 0.5rem;"><strong>Strategie:</strong> productiviteit snel naar boven; functie-inhoud verandert sterk; herinvesteer de winst in regie- en veldcapaciteit.</p>
+      </div>
+      <div class="system-card">
+        <h4>Zone 2 &mdash; Hoog (score 7-8)</h4>
+        <div class="system-role">AI-augmented werk, T-shaped competenties</div>
+        <p style="font-size: 0.88rem;">Technisch Specialist Regisserend (7,8), Planner (7,7), Consultant (7,7), Bouwkundige (7,7), Werkvoorbereider varianten (7,5-7,6), Analist (7,5), Business Analist (7,5), Modelleur-Tekenaar (7,3), Mdw Operationele Ondersteuning (7,2-7,3), Sitemanager-kantoorvariant (7,2), Projectmanager (7,2-7,4).</p>
+        <p style="font-size: 0.85rem; color: var(--gray-800); margin-top: 0.5rem;"><strong>Strategie:</strong> functie blijft, AI-augmented; investeer in upskilling en T-shaped profielen.</p>
+      </div>
+      <div class="system-card">
+        <h4>Zone 3 &mdash; Laag (score 4-6)</h4>
+        <div class="system-role">Menselijke regie, AI als hulpmiddel</div>
+        <p style="font-size: 0.88rem;">Contractmanager (6,8), Werkcoordinator-uitvoering (6,9), Ontwerp Engineer (6,0), Programma Manager (5,0), Uitvoerder Regio/Civiel (5,0), Sitemanager-uitvoeringsvariant (4,4), Werkverantwoordelijke (3,4-4,3).</p>
+        <p style="font-size: 0.85rem; color: var(--gray-800); margin-top: 0.5rem;"><strong>Strategie:</strong> menselijk oordeel en regie domineren; AI als hulpmiddel niet vervanger. Investeer hier juist in <em>meer</em> mensen.</p>
+      </div>
+      <div class="system-card system-highlight">
+        <h4>Zone 4 &mdash; Zeer laag (score &lt;3)</h4>
+        <div class="system-role">Mensenwerk &mdash; hier zit de bottleneck</div>
+        <p style="font-size: 0.88rem;">Bouwkundig Medewerker (3,9), Veiligheidstoezichthouder (3,8), Technicus (2,5-2,8), Uitvoerder Hoogspanning (2,2), Klimmer hoogspanningsmasten (niet gescoord, fysieke aard).</p>
+        <p style="font-size: 0.85rem; color: var(--gray-800); margin-top: 0.5rem;"><strong>Strategie:</strong> schaalt alleen via meer mensen, betere tools (drones, prefab) of fundamenteel andere werkmethode. AI helpt hier nauwelijks.</p>
+      </div>
+    </div>
+
+    <div class="callout callout-warning"><strong>Methodische beperking</strong>Het functiehuis is generiek; voor sommige rollen (zoals consultant of sitemanager met meerdere subvarianten) kan de score onvoldoende recht doen aan de werkelijke inhoud. Daarom dient de zone-indeling als gespreksopener: in de cluster-analyse in Tab 02 corrigeren we waar nodig op basis van vacaturetekst en sectorkennis.</div>
+  </div>
+</div>
+
+<!-- ===== 5. DRIEVOUDIGE DRUK ===== -->
+<div class="section section-alt" id="dubbel">
+  <div class="container">
+    <h2>5. De dubbele druk &mdash; waarom het nu schuurt</h2>
+
+    <p>Het probleem voor Realisatie ontstaat doordat twee krachten tegelijk drukken en elkaar versterken. Geen van beide is op zichzelf nieuw, maar de samenloop is dat wel. Wie alleen op &eacute;&eacute;n druk reageert, lost niets op.</p>
+
+    <div class="stat-row" style="grid-template-columns: 1fr 1fr;">
+      <div class="stat-card"><div class="number" style="font-size: 2rem;">Volume</div><div class="label">Transitie verdubbelt elektriciteitsvraag 2020-2035; netcongestie eist versnelling; TenneT zet &euro;50 mrd 2026-2040 in <span class="ref">(TenneT/Gasunie II3050; TenneT 2025)</span></div></div>
+      <div class="stat-card"><div class="number" style="font-size: 2rem;">Vergrijzing</div><div class="label">40% van gespecialiseerde HS-engineers gaat pensioen 2024-2032; "knowledge cliff" 2025-2032 <span class="ref">(CIGRE 2023)</span></div></div>
+    </div>
+
+    <h3>Druk 1: het volume groeit explosief</h3>
+    <p>De nationale elektriciteitsvraag verdubbelt circa 2020-2035, gedreven door elektrificatie van industrie, mobiliteit en gebouwen <span class="ref">(TenneT/Gasunie II3050)</span>. Industriele elektrificatie alleen al vraagt grote vermogensaansluitingen van 100 MW tot enkele honderden MW per site. Netcongestie sinds 2024, wachttijden 5-10 jaar voor nieuwe aansluitingen. Het werkpakket richting Realisatie verschuift fundamenteel van regulier onderhoud naar grootschalige uitbreiding en versnellingsprojecten.</p>
+
+    <h3>Druk 2: de vergrijzing slaat hard toe</h3>
+    <p>28-32% van Nederlandse technische werknemers is 55+ <span class="ref">(CBS StatLine 2023)</span>; in de energiesector ligt dat richting 30-35%. De gemiddelde leeftijd van actieve hoogspanningsingenieurs in Nederland is 48-52 jaar <span class="ref">(Dutch Power Committee 2023)</span>. Ongeveer <strong>40% van de meest gespecialiseerde HS-engineers gaat 2024-2032 met pensioen</strong>. CIGRE en ENTSO-E waarschuwen voor een "knowledge cliff" tussen 2025 en 2032: de generatie die SF6, 380 kV-systemen en commissioning beheerst, verdwijnt voordat een nieuwe generatie is opgebouwd <span class="ref">(CIGRE technical brochure 2023; ENTSO-E workforce outlook 2023)</span>.</p>
+
+    <h3>Twee drukken &mdash; &eacute;&eacute;n keten</h3>
+    <p>De twee drukken zijn niet onafhankelijk. Volumegroei vergroot het werkpakket; vergrijzing krimpt de capaciteit. Realisatie staat op het scharnierpunt: hier komt het werkpakket binnen, hier zit het ervaringsverlies het hardst, hier moet productiviteit per FTE aantoonbaar omhoog om de keten op gang te houden. Wie alleen op volume reageert (meer mensen aannemen) loopt vast op de vergrijzing; wie alleen op vergrijzing reageert (kennis-overdracht) lost het volumeprobleem niet op. De strategie moet daarom op beide tegelijk werken.</p>
+  </div>
+</div>
+
+<!-- ===== 6. SUPPLY CHAIN ===== -->
+<div class="section" id="supply">
+  <div class="container">
+    <h2>6. Supply chain als planningsdruk</h2>
+
+    <p>Een vaak onderschatte realiteit: Realisatie-planning is in 2026 niet langer engineering-gedreven, maar supply-chain-gedreven. De levertijden van kritieke componenten dwingen Realisatie tot 4-5 jaar vooruit plannen en gedwongen portfolio-keuzes.</p>
+
+    <table>
+      <thead><tr><th>Component</th><th>Levertijd 2024-2025</th><th>Implicatie Realisatie</th></tr></thead>
+      <tbody>
+        <tr><td>HVDC-kabels (320-525 kV XLPE)</td><td>36-60 maanden</td><td>Project-pipeline planning 4-5 jaar vooruit</td></tr>
+        <tr><td>HVAC 380 kV ondergronds</td><td>24-42 maanden</td><td>Werkvolgorde gedwongen door beschikbaarheid</td></tr>
+        <tr><td>Grote vermogenstrafo's &gt;200 MVA</td><td>30-48 maanden</td><td>Standby-capaciteit kritiek voor noodvervanging</td></tr>
+        <tr><td>HVDC converter-trafo's</td><td>48-60+ maanden</td><td>Zeer beperkte capaciteit; OEM-allocatie</td></tr>
+        <tr><td>145-420 kV GIS (SF6)</td><td>115-210 weken (2,5-4 jaar)</td><td>Uitschieters tot 5 jaar</td></tr>
+        <tr><td>SF6-vrije GIS</td><td>10-25% langer dan SF6</td><td>10-30% duurder 2024-2025; verbod nieuwe SF6 vanaf jan 2026</td></tr>
+        <tr><td>Secondary systems / IEDs</td><td>6-12 maanden (post chip-crisis)</td><td>Beheersbaar maar kwetsbaar</td></tr>
+        <tr><td>Exceptioneel transport &gt;400 ton</td><td>6-12 maanden planning</td><td>Coordinatie met Mammoet/Wagenborg Nedlift</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size: 0.78rem; color: var(--gray-700); margin-top: 0.4rem;">Bronnen: DNV Grid components outlook 2024; Qirion marktanalyse 09; OEM-publicaties Siemens Energy, Hitachi Energy, GE Vernova; TenneT raamcontracten 2022-2024 (&euro;9 mrd voor 2 GW HVDC-kabel toegekend aan Prysmian, NKT).</p>
+
+    <div class="callout callout-insight"><strong>De rolwijziging die hieruit volgt</strong>Werkvoorbereiders en Tactisch Planners moeten lange-cyclus inkoop in hun planning meenemen. Projectmanagers moeten portfolio-prioriteit afstemmen met componentbeschikbaarheid. Sitemanagers moeten projectvensters openen wanneer componenten arriveren, niet wanneer de engineering klaar is. Dit is een fundamenteel andere werkmethode dan de klassieke watervalplanning.</div>
+  </div>
+</div>
+
+<!-- ===== 7. KRACHTENVELD ===== -->
+<div class="section section-alt" id="krachtenveld">
+  <div class="container">
+    <h2>7. Krachtenveld &mdash; wat verdwijnt, wat ontstaat, wat blijft</h2>
+
+    <p>Een ordening van wat de drukken op het werk in Realisatie gaan veranderen. Niet als voorspelling maar als gespreks-structuur voor de Directeur.</p>
+
+    <div class="three-col">
+      <div class="col col-verdwijnt">
+        <h4>Verdwijnt of krimpt sterk</h4>
+        <ul>
+          <li>Pure administratieve rollen zonder analytische component (zone 1)</li>
+          <li>Handmatige werkvoorbereiding met 2D-tekeningen</li>
+          <li>Reguliere fysieke mast-inspectie (overgenomen door drones met AI)</li>
+          <li>Routinematige rapportage en statusoverleggen</li>
+          <li>Standaardspecificaties opstellen (door AI gegenereerd)</li>
+        </ul>
+      </div>
+      <div class="col col-ontstaat">
+        <h4>Ontstaat of groeit</h4>
+        <ul>
+          <li>Digital-twin-georienteerde commissioning engineers</li>
+          <li>Prefab-integratoren en montage-coordinatoren</li>
+          <li>SF6-vrije technologie-specialisten</li>
+          <li>HVDC-converter station specialisten</li>
+          <li>AI-geletterde portfolio &amp; capaciteitsplanners</li>
+          <li>Internationale werving &amp; certificering coordinatoren</li>
+          <li>Compliance-specialisten (NIS2, CSRD, EU AI Act FRIA)</li>
+        </ul>
+      </div>
+      <div class="col col-blijft">
+        <h4>Blijft cruciaal &mdash; en wordt schaarser</h4>
+        <ul>
+          <li>Klimmers hoogspanningsmasten en monteurs</li>
+          <li>Technici hoogspanning met BEI-aanwijzingen</li>
+          <li>Werkverantwoordelijken (veiligheids-eindverantwoordelijkheid)</li>
+          <li>Veiligheidstoezichthouders op locatie</li>
+          <li>Uitvoerders met daadkracht en stakeholder-feeling</li>
+          <li>Sitemanagers met aannemer-aansturing</li>
+          <li>Directievoerders bouwkunde en HS-kabels</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="margin-top: 1.2rem;">Wat opvalt: de "blijft"-kolom bevat juist de rollen waarop arbeidsmarkt het zwaarst drukt. De "verdwijnt"-kolom bevat rollen waar de productiviteitswinst zit. De vraag voor de Directeur is hoe de winst uit de eerste kolom wordt herbenut om de derde kolom op sterkte te krijgen.</p>
+
+    <div class="callout callout-opportunity"><strong>Strategische hefboom</strong>Wie de productiviteitswinst uit zone 1-2 herinvesteert in een grotere veld- en regie-capaciteit (zone 3-4) plus in technologische versnellers (prefab, drones, digital twin), kan een nettomeer-output realiseren met een geringere FTE-groei. Wie de winst laat verdampen in incrementele efficiency, kan de groeiopgave niet aan.</div>
+  </div>
+</div>
+
+</div><!-- /tab-opgave -->
+
+<!-- ===== TAB 02: STRATEGISCHE PERSONEELSPLANNING ===== -->
+<div id="tab-spp" class="tab-content">
+
+<!-- ===== HERO TAB 02 ===== -->
+<section class="v-intro" style="background: linear-gradient(140deg, #7a1418 0%, #b01c21 50%, #d42025 100%); padding: 3rem 1.5rem;">
+  <div class="container">
+    <div class="v-label">Tab 02 &mdash; Strategische Personeelsplanning</div>
+    <h1 style="color: #fff;">Het mensenbeeld richting 2030</h1>
+    <p class="v-lead">Welke rollen in Realisatie groeien, transformeren, of komen onder druk? Wat zegt de arbeidsmarkt? Wat doen aannemers? En welke drie scenario's moeten we doordenken voordat we ergens op vastpinnen?</p>
+  </div>
+</section>
+
+<!-- ===== TOC ===== -->
+<div class="toc-bar">
+  <div class="container">
+    <a href="#clusters">Rollenlandschap</a>
+    <a href="#arbeidsmarkt">Arbeidsmarkt</a>
+    <a href="#aannemers">Aannemersmarkt</a>
+    <a href="#scenarios">Scenario's 2030</a>
+    <a href="#implicaties">Implicaties</a>
+  </div>
+</div>
+
+<!-- ===== ROLLENLANDSCHAP ===== -->
+<section class="section-light" id="clusters" style="padding: 2.5rem 1.5rem;">
+  <div class="container">
+    <h2>8. Het rollenlandschap per cluster</h2>
+
+    <p>Realisatie is opgebouwd uit zes herkenbare clusters die elk een eigen dynamiek hebben in AI-impact, arbeidsmarktdruk en wervingsstrategie. Hieronder per cluster: wat het is, welke functies erin zitten, welke AI-zone overheerst, en wat de strategische lijn is.</p>
+
+    <h3>Cluster A &mdash; Uitvoering &amp; veld</h3>
+    <p><em>Klimmer hoogspanningsmasten, Uitvoerder Hoogspanning, Uitvoerder Regio, Technicus, Technicus GGI, Technicus Hoogspanning, Technicus Betuweroute, Werkverantwoordelijke, Veiligheidstoezichthouder, Operationeel Technisch Medewerker, Regio Opzichter.</em></p>
+    <p><strong>AI-zone overheersend: 3-4 (laag).</strong> Uitvoerder Hoogspanning 2,2; Technicus 2,5-2,8; Werkverantwoordelijke 3,4-4,3. Het werk is fysiek, op locatie, veiligheidsgereguleerd via BEI-aanwijzingen.</p>
+    <p>Uit de Qirion vacaturetekst voor Technicus Hoogspanning Rijnland: onderhoud aan elektrotechnische installaties op onderstations 10kV tot 150kV, schakelen, storingsdienst, MBO 3-4 elektrotechniek, schaal 4-5 (&euro;3.113-&euro;4.459). Uit de Werkverantwoordelijke Hoogspanning vacature: "Je beoordeelt, waarborgt en draagt de verantwoordelijkheid voor de veiligheid bij alle werkzaamheden binnen het HS-netwerk". MBO 4 elektrotechniek, BEI HS AVP-aanwijzing verplicht, schaal 7-8 (&euro;3.656-&euro;5.831).</p>
+    <p><strong>Wat verandert:</strong> drones nemen inspectiewerk over (Qirion al actief inzetter), prefab schuift uitvoering naar montage-en-koppel werk, SF6-uitfasering vraagt nieuwe certificering. Maar het schakelen, monteren en commissioning blijven mensenwerk.</p>
+    <p><strong>Capaciteitsrisico:</strong> hoogspanningsmonteurs "zeer moeilijk vervulbaar" volgens UWV; vergrijzing 40% pensionering 2024-2032; geen MBO-instroom op schaal.</p>
+
+    <h3>Cluster B &mdash; Engineering &amp; technisch</h3>
+    <p><em>Technisch Specialist (alle varianten), Engineer Transformatoren, Engineer AIS, Engineer Technisch Specialist, Maintenance Engineer, Project Engineer, Modelleur-Tekenaar, Werkvoorbereider (alle varianten), Directievoerder, Sitemanager (kantoorvariant), Bouwkundig Medewerker.</em></p>
+    <p><strong>AI-zone overheersend: 1-2 (zeer hoog tot hoog).</strong> Engineer Technisch Specialist 8,2; Werkvoorbereider 7,5-8,3; Modelleur-Tekenaar 7,3; Sitemanager varieert 4,4-7,2 afhankelijk van rol-zwaartepunt.</p>
+    <p><strong>Wat verandert:</strong> 30-50% van standaardwerk wordt automatiseerbaar in 3-5 jaar. Werkvoorbereiders schuiven van "tekenen en specificeren" naar "valideren, uitzonderingen behandelen, ketensynchroniseren". Modelleurs worden BIM-integratoren ipv pure tekenaars. Engineers benutten digital twin-omgevingen om virtueel te commissioneren v&oacute;&oacute;r fysieke bouw.</p>
+    <p><strong>Capaciteitsrisico:</strong> aantal FTE blijft relatief stabiel; werkinhoud verandert substantieel. Vereist actieve omscholing en T-shaped competentieontwikkeling.</p>
+
+    <h3>Cluster C &mdash; Project, portfolio &amp; contract</h3>
+    <p><em>Projectmanager (alle varianten incl. Hoogspanningskabels, Vermogensschakelaars, Terreinen &amp; Gebouwen), Projectcoordinator, Programmamanager, Programma Manager Materialen, Portfoliocoordinator, Portfolio Analist, Business Analist, Specialist portfolio &amp; ontwikkeling, Contractmanager.</em></p>
+    <p><strong>AI-zone overheersend: 2-3 (gemengd).</strong> Projectmanager varieert sterk 5,1-7,4 afhankelijk van rol-inhoud; Projectcoordinator 7,6-8,1; Programmamanager 5,0; Contractmanager 6,8.</p>
+    <p><strong>Wat verandert:</strong> projectcoordinatie en portfolio-analyse worden sterk AI-versneld (dashboards, rapportages, status-tracking). Project- en programmamanagement zelf (besluitvorming, stakeholder, escalatie) blijft mensenwerk. Contractmanagement zit in het midden &mdash; analyse versnelt, relatie en onderhandeling niet.</p>
+    <p><strong>Capaciteitsrisico:</strong> projectcomplexiteit stijgt door regelgeving (Omgevingswet, NIS2, CSRD, EU AI Act FRIA aug 2026) en ketencomplexiteit. Aantal PM/PgM moet groeien met portfolio.</p>
+
+    <h3>Cluster D &mdash; Planning &amp; coordinatie</h3>
+    <p><em>Planner, Tactisch Planner, Operationeel Planner, Werkcoordinator, Coordinator, Project Administrateur, Medewerker Projectadministratie.</em></p>
+    <p><strong>AI-zone overheersend: 1 (zeer hoog).</strong> Tactisch Planner 8,4; Werkcoordinator 8,3; Planner 7,7; Mdw Projectadministratie 9,0.</p>
+    <p><strong>Wat verandert:</strong> planning kantelt van handmatig naar AI-assisted scenario-planning. Projectadministratie wordt grotendeels overbodig of fundamenteel anders ingericht in 3-5 jaar. Werkcoordinatie schuift van mens-met-spreadsheet naar mens-met-AI-dashboard plus uitzonderingenbehandeling.</p>
+    <p><strong>Strategische winst:</strong> dit cluster is een bron van productiviteitswinst die FTE-uitbreiding aan veldzijde kan financieren als de winst slim wordt herbenut.</p>
+
+    <h3>Cluster E &mdash; Logistiek &amp; support</h3>
+    <p><em>Medewerker Logistiek, Voorraadbeheerder, Medewerker Distributie (incl. Qirion Logistiek), Administratief Medewerker, Allround Support Medewerker, Medewerker business support, Senior support medewerker, Medewerker Sales Support, Operationeel Medewerker, Medewerker Operationele Ondersteuning &amp; Advisering.</em></p>
+    <p><strong>AI-zone overheersend: 1 (zeer hoog).</strong> Administratief Medewerker 9,1; Mdw Operationele Ondersteuning 7,2-7,3.</p>
+    <p><strong>Wat verandert:</strong> logistiek wordt sterker data-gedreven (sensoring, predictive supply). Support- en administratierollen kantelen richting uitzonderingsbehandeling en relatiebeheer. Voorraadbeheer integreert met TenneT lange-cyclus contracten.</p>
+
+    <h3>Cluster F &mdash; Advies &amp; specialisme</h3>
+    <p><em>Consultant (incl. GGI, Bouwkunde), Digitalisering Professional, Communicatiespecialist, Analist, Specialist.</em></p>
+    <p><strong>AI-zone overheersend: 1-2 (hoog).</strong> Digitalisering Professional 8,5; Consultant 7,7; Analist 7,5.</p>
+    <p><strong>Wat verandert:</strong> Consultants leveren minder onderzoek en meer interpretatie. Digitalisering Professional krijgt centrale rol in adoptie. Analisten produceren minder rapporten en meer beslissingsondersteuning. <em>Caveat:</em> consultant-rol is in functiehuis relatief generiek; specifieke sector-consultants mogelijk onderbescoord.</p>
+  </div>
+</section>
+
+<!-- ===== ARBEIDSMARKT ===== -->
+<section class="section-dark" id="arbeidsmarkt" style="background: #2d1215; padding: 2.5rem 1.5rem;">
+  <div class="container">
+    <h2>9. Arbeidsmarkt en vergrijzing &mdash; het breedteprobleem</h2>
+
+    <p>De arbeidsmarkt levert simpelweg niet wat de transitie vraagt. De cijfers zijn confronterend genoeg om als directielijn op te baseren.</p>
+
+    <div class="stat-row">
+      <div class="stat-card"><div class="number">28.000</div><div class="label">extra netbeheer-medewerkers nodig 2024-2030 <span class="ref">(WENB)</span></div></div>
+      <div class="stat-card"><div class="number">60.000</div><div class="label">technici tekort NL in 2030 <span class="ref">(ROVC, EenVandaag 2025)</span></div></div>
+      <div class="stat-card"><div class="number">40%</div><div class="label">gespecialiseerde HS-engineers pensioen 2024-2032 <span class="ref">(CIGRE)</span></div></div>
+      <div class="stat-card"><div class="number">15-20%</div><div class="label">netbeheer-bezetting verlaat sector 2024-2030 door pensionering <span class="ref">(WENB)</span></div></div>
+    </div>
+
+    <h3>Instroom MBO/HBO ontoereikend</h3>
+    <p>MBO-elektrotechniek levert 4.000-5.000 gediplomeerden per jaar; daarvan gaat 5-10% naar netbeheer en hoogspanning &mdash; een paar honderd per jaar voor de hele sector <span class="ref">(DUO + WENB)</span>. HBO-elektrotechniek levert 1.200-1.500 per jaar, waarvan 10-15% naar energiesector <span class="ref">(Vereniging Hogescholen + WENB)</span>. Bij elkaar ruim te weinig om de vergrijzingsgolf op te vangen en de groei te bemensen.</p>
+
+    <h3>Zij-instroom en internationale werving</h3>
+    <p>Zij-instromers waren 15-25% van nieuwe instroom in 2024 en groeien naar 25-35% richting 2028 <span class="ref">(WENB arbeidsmarktmonitor)</span>. Dit vergt andere opleidings- en begeleidingsinfrastructuur &mdash; en versterkt de rol van Werkverantwoordelijken en Voorlieden als coach. Internationale werving blijft achter: slechts 1 op 5 Nederlandse technische bedrijven werft actief over de grens <span class="ref">(EenVandaag 2025)</span>; tegelijk werft 65% van bedrijven in andere sectoren w&eacute;l internationaal <span class="ref">(Flexmarkt 2025)</span>. Voor Realisatie ligt hier een onbenutte route, mits taal- en certificeringstrajecten op orde komen.</p>
+
+    <h3>ZZP/inleen onder druk</h3>
+    <p>20-35% van effectieve capaciteit in hoogspanning-engineering komt nu via ZZP en inleen, voor specialistische rollen vaak hoger <span class="ref">(sectorraming)</span>. Met de Wet DBA-handhaving actief per 1 januari 2025 zet die buffer onder druk. Realisatie wordt gedwongen tot vast dienstverband of via de aannemers-route &mdash; en de aannemers-route is, zoals we straks zien, ook geen onbeperkte bron.</p>
+
+    <h3>Beloningsdruk</h3>
+    <p>Energie-cao's kenden 4-7% loonstijging in 2023-2024, boven het NL-gemiddelde van 5-6% <span class="ref">(AWVN)</span>. HS-engineer salarissen liggen 15-30% boven het HBO-technisch gemiddelde <span class="ref">(Randstad salarisonderzoek techniek 2024)</span>. De kostenstructuur per gerealiseerd project verschuift &mdash; productiviteit moet zwaarder gaan tellen om dit te neutraliseren.</p>
+  </div>
+</section>
+
+<!-- ===== AANNEMERS ===== -->
+<section class="section-light" id="aannemers" style="padding: 2.5rem 1.5rem;">
+  <div class="container">
+    <h2>10. De aannemersmarkt &mdash; niet zomaar "we besteden meer uit"</h2>
+
+    <p>Een tweede route naast eigen FTE is meer aanbesteden via aannemers. Maar die markt is ook krap, consolideert, en transformeert tegelijkertijd. Het beeld is genuanceerder dan "we vragen het wel aan een aannemer".</p>
+
+    <h3>De TenneT-preferred suppliers</h3>
+    <p>TenneT heeft voor het hoogspanningsnet-uitbreidingswerk een vaste poule preferred suppliers: <strong>Heijmans Infra, Volker Energy Solutions, BAM Energie &amp; Water, A.Hak Elektron, NRG, en Van Gelder Kabel- Leiding- en Montagewerken</strong> <span class="ref">(TenneT raamcontracten 2022-2024, Infrasite 2025)</span>. Dezelfde poule waarmee Qirion als regie- en uitvoeringspartner samenwerkt op het Liander-gebied. Aannemerscapaciteit is daarmee een gedeeld goed met directe TenneT-uitvragen &mdash; meer Qirion-werk betekent meer concurrentie om dezelfde aannemerscapaciteit.</p>
+
+    <h3>Heijmans Krachtveld &mdash; de prefab-doorbraak</h3>
+    <div class="callout callout-insight"><strong>De doorbraak die er is</strong>Heijmans bouwt in Ede de fabriek <strong>Krachtveld</strong>: 480 prefab modules voor 120 nieuwe hoogspanningsvelden over vijf jaar, contractwaarde bijna &euro;80m, productie start begin 2026. <strong>Bouwtijd op locatie 30% korter</strong> dan traditionele methode. <span class="ref">(Aannemervak 2025, Infrasite dec 2025)</span></div>
+    <p>Heijmans levert standaardmodules voor schakelvelden die in de fabriek geassembleerd en getest worden v&oacute;&oacute;r verzending naar bestaande TenneT-stations. Dit is een fundamenteel andere werkmethode dan vandaag &mdash; en het maakt de competentie-mix die Realisatie nodig heeft anders. Niet meer "bouwen vanaf nul" maar "ontvangen, plaatsen, koppelen, beproeven".</p>
+
+    <h3>Consolidatie in de markt</h3>
+    <p>De aannemersmarkt consolideert zichtbaar. Heijmans nam in 2022 Dynniq Energy over (ACM concentratiebesluit) &mdash; directe positionering op de HS-markt. BAM en Heijmans hebben sinds 2020 een joint venture asfaltcentrales (ACM). Heijmans verwierf in december 2025 exclusieve zeggenschap over Hegeman Bouw &amp; Services (ACM). Het aantal grote spelers neemt af; de machtspositie van Heijmans en BAM richting netbeheerders neemt toe <span class="ref">(ACM concentratiebesluiten)</span>.</p>
+
+    <h3>Wat dit voor Realisatie betekent</h3>
+    <ul>
+      <li>"Meer aanbesteden" werkt alleen als er aannemerscapaciteit beschikbaar is &mdash; die is ook krap</li>
+      <li>Prefab-shift verschuift Realisatie's rol naar ontwerp-regie, aannemer-aansturing, site-management en commissioning &mdash; minder direct fysiek werk</li>
+      <li>Sterkere afhankelijkheid van 5-6 aannemers vergroot leveranciersrisico (single-points-of-failure)</li>
+      <li>Voor commissioning, schakelen en beproeven blijven eigen Werkverantwoordelijken en Technici nodig vanwege BEI-aanwijzingen en kennis van eigen assets</li>
+      <li>Strategische partnerschap met Heijmans, Volker, BAM, A.Hak, NRG, Van Gelder &mdash; in plaats van aanbestedingstransacties &mdash; lijkt onvermijdelijk</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== SCENARIO'S ===== -->
+<section class="section-dark" id="scenarios" style="background: #2d1215; padding: 2.5rem 1.5rem;">
+  <div class="container">
+    <h2>11. Drie scenario's voor Realisatie 2025-2030</h2>
+
+    <p>Geen voorspelling, drie plausibele paden. Elke scenario heeft een eigen FTE-implicatie, aannemers-mix en technologie-adoptie. De kansen zijn beredeneerd op basis van TenneT's eigen 60% uitloop-cijfer, WENB tekortprognose en sectorale signalen. Interne validatie staat in Tab 03.</p>
+
+    <h3>Scenario A &mdash; Versnelling slaagt (kans &lt;25%)</h3>
+    <ul>
+      <li>Snelle AI-adoptie in zone 1-2: <strong>30-50% productiviteitswinst</strong> op werkvoorbereiding, planning en engineering</li>
+      <li>Internationale werving stijgt naar 30-40% van nieuwe instroom</li>
+      <li>Aannemerscapaciteit volgt mee: prefab opschaling slaagt, BAM-Heijmans-consolidatie levert</li>
+      <li>Supply chain herstelt (lead times -25-40%)</li>
+      <li><strong>FTE 2030: circa 950-1.150 (een derde tot 60% meer dan vandaag)</strong></li>
+      <li>Eigen FTE focust op regie en kritisch vakwerk; aannemers leveren grootste volume</li>
+    </ul>
+
+    <h3>Scenario B &mdash; Aanhoudende krapte (basis, kans ~55%)</h3>
+    <ul>
+      <li>AI-adoptie beperkt tot 10-20% productiviteitswinst op kantoorrollen</li>
+      <li>Vergrijzing wordt 60-70% gecompenseerd, niet 100%</li>
+      <li>Aannemerscapaciteit groeit beperkt; prijzen stabiliseren hoog</li>
+      <li>Supply chain blijft krap; portfolio-prioritering wordt regulier</li>
+      <li><strong>FTE 2030: circa 870-1.050 (groei +20-45%)</strong></li>
+      <li>Knelpunt blijft in zone 3-4 (uitvoering)</li>
+      <li><strong>Werkpakket niet volledig opgeleverd; TenneT-projecten lopen door</strong></li>
+    </ul>
+
+    <h3>Scenario C &mdash; Structurele crisis (kans ~20%)</h3>
+    <ul>
+      <li>Vergrijzing slaat hard toe; "knowledge cliff" 2027-2030 in volle kracht</li>
+      <li>Internationale werving politiek geblokkeerd of vertraagd</li>
+      <li>Aannemers raken eigen markttekorten; prefab-leveringen lopen achter</li>
+      <li>AI-adoptie blijft bij PoCs zonder schaalbare productiviteitswinst</li>
+      <li><strong>FTE 2030: circa 720-870 (stagnatie of marginale groei)</strong></li>
+      <li>Werkpakket loopt 3-5 jaar uit op planning</li>
+      <li>Strategische projecten moeten worden geannuleerd of teruggeschaald</li>
+    </ul>
+
+    <div class="callout-critical"><strong>Het scenario dat geen scenario is:</strong> "Doorgaan zoals nu" is geen optie &mdash; dat leidt linea recta naar Scenario C. Alleen actieve sturing op de productiviteits-, technologie- en wervings-as kan Scenario B of beter realiseren.</div>
+  </div>
+</section>
+
+<!-- ===== IMPLICATIES ===== -->
+<section class="section-light" id="implicaties" style="padding: 2.5rem 1.5rem;">
+  <div class="container">
+    <h2>12. Wat dit betekent per cluster &mdash; de SPP-conclusies</h2>
+
+    <p>Op basis van de zes clusters, de vier AI-zones en de drie scenario's komen we tot zes conclusies die de SPP-richting bepalen.</p>
+
+    <ol>
+      <li><strong>Cluster A (uitvoering &amp; veld) groeit langzamer dan het volume vraagt.</strong> Zelfs in scenario A blijft de groei beperkt tot wat de arbeidsmarkt levert + zij-instroom + internationale werving. Prefab en drones nemen een deel van het werk over maar lossen het tekort niet structureel op. Strategie: investeer fors in opleidings- en mentor-structuur, internationale werving, en samenwerking met BBL-instromers.</li>
+      <li><strong>Cluster B (engineering &amp; technisch) verschuift in werkinhoud, niet in FTE.</strong> Aantal blijft relatief stabiel; vereiste competenties veranderen sterk. Strategie: actieve upskilling op digital twin, BIM-integratie, AI-tooling. Investeer in T-shaped profielen.</li>
+      <li><strong>Cluster C (project, portfolio &amp; contract) moet groeien.</strong> Bij meer projecten met hogere regelgevingsdruk en complexiteit (NIS2, CSRD, EU AI Act) zijn meer PM's, PgM's en Contractmanagers nodig. Strategie: actief werven, ook strategisch lateraal uit andere infra-sectoren.</li>
+      <li><strong>Cluster D (planning &amp; coordinatie) krimpt in FTE maar transformeert in inhoud.</strong> Standaardplanning wordt grotendeels AI; menselijke planners worden uitzonderingen- en scenarioplanners. Productiviteitswinst moet hier serieus worden genomen als financieringsbron voor groei in cluster A en C.</li>
+      <li><strong>Cluster E (logistiek &amp; support) krimpt eveneens.</strong> Vergelijkbaar met cluster D. Hier liggen herinrichtingsmogelijkheden naar voorraadbeheer richting OEM's en lange-cyclus inkoop.</li>
+      <li><strong>Cluster F (advies &amp; specialisme) wordt strategischer en kleiner.</strong> Specialisten worden gevraagd voor de echte oordeels- en netwerkrollen, niet voor research dat door AI gedaan kan worden. Bewust laden van capaciteit op SF6-vrij, HVDC, IEC 61850, EU AI Act compliance.</li>
+    </ol>
+
+    <div class="callout callout-insight"><strong>De rode draad</strong>Realisatie kan niet groeien als evenredige FTE-uitbreiding. Het moet groeien door een fundamentele herverdeling van capaciteit van zone 1 (planning, administratie) richting zone 3-4 (regie en veld), ondersteund door technologie die het veldwerk versnelt zonder mensen te vervangen.</div>
+  </div>
+</section>
+
+</div><!-- /tab-spp -->
+
+<!-- ===== TAB 03: BOUWSTENEN, ROUTEKAART EN VERSTERKING ===== -->
+<div id="tab-bouwstenen" class="tab-content">
+
+<!-- ===== HERO TAB 03 ===== -->
+<section class="v-intro" style="background: linear-gradient(140deg, #7a1418 0%, #b01c21 50%, #d42025 100%); padding: 3rem 1.5rem;">
+  <div class="container">
+    <div class="v-label">Tab 03 &mdash; Bouwstenen &amp; Routekaart</div>
+    <h1 style="color: #fff;">Wat de Directeur moet kiezen</h1>
+    <p class="v-lead">Vier strategische keuzes, vijf technologische versnellers, een 90-dagen plan &mdash; en de zeven open vragen die het rapport scherper kunnen maken zodra er intern getoetst wordt. Geen vrijblijvende verkenning maar besluiten.</p>
+  </div>
+</section>
+
+<!-- ===== TOC ===== -->
+<div class="toc-bar">
+  <div class="container">
+    <a href="#keuzes">Strategische keuzes</a>
+    <a href="#bouwstenen-zones">Bouwstenen per zone</a>
+    <a href="#technologie">Technologische versnellers</a>
+    <a href="#aannemers-strategie">Aannemerstrategie</a>
+    <a href="#routekaart">90-dagen plan</a>
+    <a href="#versterking">Versterking &amp; validatie</a>
+    <a href="#bronnen">Bronnen</a>
+  </div>
+</div>
+
+<!-- ===== STRATEGISCHE KEUZES ===== -->
+<section class="section-light" id="keuzes" style="padding: 2.5rem 1.5rem;">
+  <div class="container">
+    <h2>13. Vier strategische keuzes voor de Directeur Realisatie</h2>
+
+    <p>De Directeur staat voor vier wezenlijke keuzes die de richting van Realisatie 2025-2030 bepalen. Elke keuze sluit alternatieven niet uit maar bepaalt wel het zwaartepunt.</p>
+
+    <h3>Keuze 1: Eigen FTE of regie op aannemers?</h3>
+    <p>Bij forse capaciteitsgroei kan Realisatie kiezen voor (a) een grotendeels eigen-FTE strategie, (b) een primair regie-strategie met diepe partnerschappen met de 5-6 grote aannemers, of (c) een hybride. Optie (a) loopt vast op de arbeidsmarkt. Optie (b) creeert structurele leveranciersafhankelijkheid maar kan sneller schalen. Hybride is realistisch &mdash; maar w&aacute;t de verhouding moet zijn (60-40? 40-60?) is een richting-bepalende keuze, geen aanpassing achteraf.</p>
+
+    <h3>Keuze 2: Welke technologische versnellers worden strategische prioriteit?</h3>
+    <p>Drones (Qirion al actief), prefab modules (Heijmans Krachtveld is opportunity), digital twin commissioning (IEC 61850), SF6-vrije systemen, BIM-integratie, AI-tooling voor werkvoorbereiding. Realisatie kan niet alles tegelijk maximaal pakken. <em>Welke twee tot drie krijgen tussen 2026-2028 expliciete directiesturing en investering?</em></p>
+
+    <h3>Keuze 3: Versnellen op productiviteit, of vasthouden aan ambachtelijkheid?</h3>
+    <p>AI-versnelling in zone 1-2 vereist andere werkprocessen, andere skills, andere management-stijl. Sommige delen van Realisatie hebben een diep ambachtelijke cultuur die juist een buffer vormt tegen kwaliteit-uitholling. Maar bij scenario A is de productiviteits-as onvermijdelijk. De keuze is hoever, hoe snel, en in welke clusters &mdash; en wie binnen de organisatie de change-eigenaar is.</p>
+
+    <h3>Keuze 4: Welke projecten krijgen prioriteit als capaciteit niet alles kan?</h3>
+    <p>Bij scenario B (basis) wordt het volledige werkpakket niet opgeleverd. De impliciete keuze is: het loopt uit (zoals nu, 60% uitloop met 2,5 jaar). De expliciete keuze is: directie bepaalt vooraf welke projecten prioriteit krijgen op basis van strategische impact (TenneT 2GW HVDC versus regionale verzwaringen, congestiegebieden versus reguliere uitbreidingen, transitie-projecten versus onderhoud). Deze keuze maken voorkomt suboptimale uitloop achteraf.</p>
+
+    <div class="callout-critical"><strong>De waarschuwing:</strong> Geen keuze maken is ook een keuze. Bij stilzwijgende voortzetting van het huidige model belandt Realisatie naar alle waarschijnlijkheid in scenario B-naar-C: werkpakket wordt niet gehaald, aannemers worden de facto regisseur, eigen kennis erodeert. Actieve directiesturing op deze vier keuzes is de minimumvariant.</div>
+  </div>
+</section>
+
+<!-- ===== BOUWSTENEN PER ZONE ===== -->
+<section class="section-alt" id="bouwstenen-zones" style="padding: 2.5rem 1.5rem;">
+  <div class="container">
+    <h2>14. Bouwstenen per AI-zone &mdash; gedifferentieerde strategie</h2>
+
+    <p>De vier AI-zones uit Tab 01 leiden tot vier verschillende interventielijnen. Een uniform Realisatie-recept werkt niet; elke zone vraagt een eigen strategie.</p>
+
+    <h3>Zone 1 (score 8-9): Versnellen en herinvesteren</h3>
+    <ul>
+      <li>Schaalbare AI-tooling voor werkvoorbereiding, planning en administratie binnen 18 maanden uitrollen</li>
+      <li>Productiviteitsdoelen expliciet maken (bijv. 30% besparing op standaardspecificaties)</li>
+      <li>Vrijgekomen capaciteit herinvesteren in regie- en veld-rollen (zone 3-4), niet in incrementele groei van zone 1 zelf</li>
+      <li>Functie-inhoud opnieuw beschrijven en CAO-implicaties bespreken met OR (Wet op Ondernemingsraden artt. 25-27)</li>
+      <li>EU AI Act compliance: FRIA-systematiek invoeren v&oacute;&oacute;r augustus 2026 voor AI-tools in kritieke infrastructuur</li>
+    </ul>
+
+    <h3>Zone 2 (score 7-8): Augmenteren via T-shaped competenties</h3>
+    <ul>
+      <li>Engineers en werkvoorbereiders systematisch trainen op digital twin (Siemens, Hitachi), BIM-integratie, AI-prompting</li>
+      <li>Hybride profielen ontwikkelen (engineer + werkvoorbereider, modelleur + BIM-coordinator)</li>
+      <li>Senior collega's positioneren als coach voor kennisdoorgifte aan zij-instromers</li>
+      <li>Loopbaanpaden expliciet maken: van pure techniek naar techniek + ketensynchronisatie + AI-validatie</li>
+      <li>Sitemanagement specifiek opsplitsen in kantoor- en veld-variant (heatmap scoort beide rollen verschillend)</li>
+    </ul>
+
+    <h3>Zone 3 (score 4-6): Bemensen met meer mensen</h3>
+    <ul>
+      <li>Werven actief voor projectmanagers, programmamanagers, contractmanagers, sitemanagers-veld</li>
+      <li>Internationale werving structureel inzetten (taal- en certificeringstrajecten als onderdeel van werving-pakket)</li>
+      <li>Zij-instroom uit aanpalende infra-sectoren faciliteren (water, weg, bouw)</li>
+      <li>Werkverantwoordelijken positioneren als BEI-coach voor zij-instromers en jongere monteurs</li>
+      <li>Salarisbenchmarking actief volgen vs. aannemers en netbeheerders</li>
+    </ul>
+
+    <h3>Zone 4 (score &lt;3): Werkmethode fundamenteel anders</h3>
+    <ul>
+      <li>Prefab-volume maximaliseren via deep partnership met Heijmans Krachtveld en vergelijkbare faciliteiten</li>
+      <li>Drone-inspectie verbreden van controle naar diagnostiek en planning (Qirion al actief, opschalen)</li>
+      <li>Digital twin pre-commissioning standaard maken (Siemens DIGSI 5, Hitachi IET600) zodat fysieke commissioning compacter wordt</li>
+      <li>Vakopleidingstrajecten met ROC's en hogescholen versterken; aantal BBL-plaatsen vergroten</li>
+      <li>Werkverantwoordelijken en monteurs proactief begeleiden door pensionering-transitie (kennis-overdracht 2-3 jaar v&oacute;&oacute;r pensioendatum)</li>
+      <li>Veiligheidskritieke processen handhaven onder druk &mdash; niet schalen ten koste van BEI-handhaving</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== TECHNOLOGIE ===== -->
+<section class="section-light" id="technologie" style="padding: 2.5rem 1.5rem;">
+  <div class="container">
+    <h2>15. Vijf technologische versnellers voor Realisatie</h2>
+
+    <p>De technologische ontwikkelingen die het veldwerk en de uitvoering raken. Geen toekomstmuziek &mdash; alles op deze lijst is in 2025-2026 commercieel beschikbaar en in productie bij andere netbeheerders of aannemers.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">Drones</div>
+        <div class="timeline-content">
+          <h4>Inspectie en diagnostiek vanuit de lucht</h4>
+          <p>Qirion zet zelf al drones in voor inspectie en toezicht op hoogspanningsmasten <span class="ref">(qirion.nl 2024-2025)</span>. Drones van circa 11 kg met 23x optische zoom en gelijktijdige thermische opnamen. AI-gedreven defectdetectie verschuift mast-inspectie van klimwerk naar drone-vlucht + AI-validatie + uitzonderingsbeoordeling. Opschaling naar 100% inspectiedekking voor reguliere masten ligt voor de hand.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">Prefab</div>
+        <div class="timeline-content">
+          <h4>Modulaire stationbouw &mdash; Heijmans Krachtveld als blauwdruk</h4>
+          <p>480 prefab modules voor 120 nieuwe hoogspanningsvelden in 5 jaar, 30% kortere bouwtijd op locatie <span class="ref">(Aannemervak 2025)</span>. Standaardisatie en fabricage in gecontroleerde omgeving maakt processen voorspelbaarder, veiliger, efficienter; minder handelingen op locatie. Voor Realisatie: van bouwen vanaf nul naar ontvangen, plaatsen, koppelen, beproeven. Uitvoerder en Sitemanager rolinhoud kantelt mee.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">Digital twin</div>
+        <div class="timeline-content">
+          <h4>IEC 61850 commissioning v&oacute;&oacute;r fysieke bouw</h4>
+          <p>Siemens DIGSI 5 met digital twin-omgeving, Hitachi PCM600 &amp; IET600 (eerste IEC 61850 Ed. 2.1-gecertificeerd), Megger SMRT digital twin <span class="ref">(IEEE/IET 2025; Siemens; Hitachi 2025)</span>. "Tests virtueel uitgevoerd verwijderen fouten en onzekerheden v&oacute;&oacute;r de tijdsdrukgevoelige commissioning-fase." Commissioning Engineer en Engineer AIS-rol kantelt: meer pre-fab virtuele test, fysieke commissioning compacter. Siemens Digital Twin Composer beschikbaar medio 2026.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">SF6-vrij</div>
+        <div class="timeline-content">
+          <h4>Clean air, g3, AirSeT &mdash; nieuwe competentie-shift</h4>
+          <p>Vanaf 1 januari 2026 verbod op nieuwe SF6-schakelaars in middenspanning (EU F-gassen verordening) <span class="ref">(IPLO 2025)</span>. Hoogspanning volgt. Stedin was eerste NL-netbeheerder met SF6-vrije HS-schakelinstallatie (50 kV Middelharnis, GE) <span class="ref">(GE Vernova 2024)</span>. Siemens Blue GIS, Schneider AirSeT, GE g3 zijn de drie hoofdvarianten. Realisatie moet komende 5 jaar zowel SF6 als SF6-vrij beheersen &mdash; dubbele competentie tijdens transitie.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">BIM</div>
+        <div class="timeline-content">
+          <h4>3D-modellen, asset management en drone-integratie</h4>
+          <p>Drone-data direct integreren in BIM/CAD; 3D-modellen van masten in asset management systems <span class="ref">(Dronematica, Leap3D)</span>. Modelleur-Tekenaar rol kantelt richting BIM-integrator. Voor projectmanagement en directievoering: integraal beeld van project-status en asset-conditie op &eacute;&eacute;n laag.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AANNEMERSTRATEGIE ===== -->
+<section class="section-dark" id="aannemers-strategie" style="background: #2d1215; padding: 2.5rem 1.5rem;">
+  <div class="container">
+    <h2>16. Aannemersstrategie &mdash; van transactie naar partnerschap</h2>
+
+    <p>Bij scenario A is de aannemers-route een sluitpost; bij scenario B en C wordt zij bepalend. Qirion moet de relatie met aannemers strategisch positioneren in plaats van projectmatig. Concreet betekent dat:</p>
+
+    <div class="do-dont">
+      <div class="do-box">
+        <strong>Doen</strong>
+        <ul>
+          <li>Lange-termijn raamcontracten met 3-4 strategische aannemers (Heijmans, Volker, BAM, A.Hak)</li>
+          <li>Gezamenlijke capaciteitsplanning 3-5 jaar vooruit, niet per project</li>
+          <li>Investeringspartnerschap in prefab-faciliteiten (Krachtveld als blueprint)</li>
+          <li>Wederzijdse training en kwaliteitsmanagement: BEI-uitwisseling, veiligheidscultuur</li>
+          <li>Heldere taakverdeling: aannemer levert volume, Qirion levert regie + commissioning + veiligheidskritisch werk</li>
+        </ul>
+      </div>
+      <div class="dont-box">
+        <strong>Niet doen</strong>
+        <ul>
+          <li>Per project competitief aanbesteden zonder vooruitziende capaciteitsplanning</li>
+          <li>Aannemerscapaciteit zien als oneindig substitueerbaar</li>
+          <li>Eigen BEI-aanwijzingen verwaarlozen omdat "de aannemer dat wel doet"</li>
+          <li>Single-supplier afhankelijkheid op de meest kritieke werkpakketten</li>
+          <li>Concurrentie met TenneT om dezelfde aannemerscapaciteit ontkennen</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="margin-top: 1.2rem;">De grondtoon: Qirion en de aannemers zitten in dezelfde arbeidsmarkt, met dezelfde leveringsklanten (TenneT, Liander, industriele grootverbruikers) en met dezelfde technologische ontwikkelingen. Concurrentie tussen Qirion en aannemers op capaciteit is een verspilling van de schaarste; samenwerking creeert wederzijdse voorspelbaarheid en ruimte voor productiviteits-investeringen.</p>
+  </div>
+</section>
+
+<!-- ===== 90-DAGEN PLAN ===== -->
+<section class="section-light" id="routekaart" style="padding: 2.5rem 1.5rem;">
+  <div class="container">
+    <h2>17. Het 90-dagen plan &mdash; van visie naar startend handelen</h2>
+
+    <p>De vier strategische keuzes en de bouwstenen vereisen tijd om uit te denken en in te bedden. Maar starten kan binnen 90 dagen. Hieronder een ritme van drie fasen die het ritme bepalen voor de rest van 2026.</p>
+
+    <div class="week-plan">
+      <div class="week-block">
+        <div class="time">Dag 1-30</div>
+        <h4>Valideren &amp; uitlijnen</h4>
+        <ul>
+          <li>Interne data verzamelen op de 7 open variabelen (zie sectie 18)</li>
+          <li>Vier strategische keuzes voorleggen aan Qirion-directie en RvB Alliander</li>
+          <li>Quick scan aannemers-partnerships: status raamcontracten Heijmans, Volker, BAM, A.Hak</li>
+          <li>Eerste meeting met TenneT op planning- en uitloop-cijfers</li>
+          <li>Werkgroep "Engineering-Realisatie scheefgroei" instellen met technische directie</li>
+        </ul>
+      </div>
+      <div class="week-block">
+        <div class="time">Dag 31-60</div>
+        <h4>Bouwstenen activeren</h4>
+        <ul>
+          <li>AI-tooling pilots in zone 1-2 (werkvoorbereiding, planning, projectcoordinatie) opstarten</li>
+          <li>FRIA-traject EU AI Act starten voor de pilots (verplicht augustus 2026)</li>
+          <li>Internationale werving programma definieren (taal, certificering, woonruimte)</li>
+          <li>Prefab-partnership met Heijmans Krachtveld concretiseren (volume, timing, kwaliteits-criteria)</li>
+          <li>Senior monteurs/Werkverantwoordelijken in kennis-overdrachtsprogramma plaatsen</li>
+        </ul>
+      </div>
+      <div class="week-block">
+        <div class="time">Dag 61-90</div>
+        <h4>Routekaart en commitment</h4>
+        <ul>
+          <li>Driejarige SPP-roadmap 2026-2029 opstellen op basis van gevalideerde data</li>
+          <li>Investeringsplan technologie (drones, digital twin, BIM, AI-tooling) afstemmen met Alliander</li>
+          <li>Aannemers-partnerschappen formaliseren met 3-5 jaar volume-committments</li>
+          <li>Eerste prioriteringsbesluit projectportfolio: welke 10-15 projecten krijgen voorrang</li>
+          <li>Directieverantwoording in jaarverslag 2026 over SPP en uitvoeringscapaciteit</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VERSTERKING ===== -->
+<section class="section-dark" id="versterking" style="background: #3a1518; padding: 2.5rem 1.5rem;">
+  <div class="container">
+    <h2>18. Versterking &amp; validatie &mdash; zeven vragen aan de directie</h2>
+
+    <p>Dit rapport is bewust opgebouwd op externe en publieke data. Het mist op zeven punten interne validatie die het visiedocument scherper zou maken. Deze vragen kunnen worden voorgelegd binnen de directie en Alliander; het rapport is niet afhankelijk van de antwoorden, maar wordt er substantieel sterker van.</p>
+
+    <h3>Waarom een aparte validatie-sectie?</h3>
+    <p>Een visie zonder interne data-onderbouwing kan strategische lijnen schetsen, maar kan geen scherpe FTE-prognoses, kostenramingen of capaciteits-keuzes vastpinnen. De zeven onderstaande vragen vormen samen de "interne validatie-laag" die het rapport van richtinggevend naar uitvoerbaar tilt. Bij beperkte interne toegankelijkheid kan dit later in een Copilot Notebook met interne SPP-documenten worden afgerond.</p>
+
+    <ol style="font-size: 0.95rem; line-height: 1.7;">
+      <li><strong>Concrete groeidoelstellingen Qirion meerjarenplan.</strong> Wat is het kwantitatieve groeipad voor het werkpakket de komende jaren? Welke FTE-implicatie zit erin verwerkt? Hoe is de splitsing eigen werk versus aannemerswerk gemodelleerd? <em>Effect op rapport:</em> maakt scenario A/B/C kwantitatief scherper.</li>
+      <li><strong>Huidige verhouding eigen FTE versus aannemersvolume in Realisatie.</strong> Hoeveel FTE-equivalent zit nu in aannemerswerk dat Qirion aanstuurt? <em>Effect op rapport:</em> bepaalt of "meer regie op aannemers" een grote of incrementele verschuiving betekent (Keuze 1 in sectie 13).</li>
+      <li><strong>Leeftijdsopbouw Realisatie Qirion specifiek.</strong> Wat is het percentage 55+ in Realisatie? Welke pensionering-prognose voor 2025-2030? <em>Effect op rapport:</em> kalibreert de "vergrijzingsdruk" specifiek voor Realisatie ipv sector-gemiddelde.</li>
+      <li><strong>Huidige aandeel ZZP/inleen in Realisatie.</strong> Wat is de DBA-impact concreet? <em>Effect op rapport:</em> maakt het aannemers-route-vraagstuk scherper als alternatief voor ZZP.</li>
+      <li><strong>Bedragen Qirion-investering in AI-tooling, training, internationale werving.</strong> Wat is er nu in begroting en wat is gepland? <em>Effect op rapport:</em> maakt aanbevelingen verifieerbaar uitvoerbaar.</li>
+      <li><strong>Aandeel werk voor TenneT versus Liander in Realisatie.</strong> Welk deel van werk komt direct van TenneT (en valt onder TenneT-pipeline 2,5 jaar uitloop), en welk deel via Liander? <em>Effect op rapport:</em> bepaalt of de TenneT-pipeline 1-op-1 doorslaat in Realisatie's planning.</li>
+      <li><strong>Aandeel werk in primair / secundair / bouwkundig.</strong> Hoe is Realisatie's werkpakket nu verdeeld over HS-installatie, OT-secundair-uitvoering (in scope?), en civiel? <em>Effect op rapport:</em> kalibreert welke functie-clusters welk groei-pad nodig hebben.</li>
+    </ol>
+
+    <div class="callout-critical"><strong>Tot die tijd</strong>Het rapport blijft uitvoerbaar als gespreks-document, beslis-startpunt en kader voor de eerste drie maanden actie. De zeven vragen vormen samen de Copilot-grondingslaag die in een latere ronde wordt toegevoegd zodra interne data beschikbaar komen.</div>
+  </div>
+</section>
+
+<!-- ===== BRONNEN ===== -->
+<section class="section-light" id="bronnen" style="padding: 2.5rem 1.5rem 3.5rem;">
+  <div class="container">
+    <h2>Bronnen</h2>
+    <div class="sources-list">
+      <p><strong>TenneT en netbeheer</strong></p>
+      <p>TenneT Investeringsplannen, <a href="https://www.tennet.eu/nl/over-tennet/publicaties/investeringsplannen">tennet.eu/nl/over-tennet/publicaties/investeringsplannen</a> (2025).</p>
+      <p>TenneT, "13 miljard euro investeren in het landelijke hoogspanningsnet" (2025).</p>
+      <p>TenneT, Ontwerpinvesteringsplan Net op Land 2024-2033, consultatieversie nov 2025.</p>
+      <p>TenneT, Standpunt netcongestie, <a href="https://www.tennet.eu/nl/netcongestie">tennet.eu/nl/netcongestie</a>.</p>
+      <p>Netbeheer Nederland en WENB, "Arbeidsmarkt in transitie" (2023).</p>
+
+      <p><strong>Alliander / Liander / Qirion</strong></p>
+      <p>Alliander Jaarverslag 2025, <a href="https://jaarverslag2025.alliander.com/">jaarverslag2025.alliander.com</a>.</p>
+      <p>Alliander Factsheet kerngegevens augustus 2025.</p>
+      <p>Qirion, "Qirion zet drones in voor inspectie en toezicht" (2024-2025).</p>
+      <p>Qirion vacatures (sitemanager, technicus hoogspanning, werkverantwoordelijke, bouwkundig medewerker) via werkenbij.alliander.com.</p>
+
+      <p><strong>Aannemersmarkt</strong></p>
+      <p>Aannemervak, "Heijmans versnelt uitbreiding hoogspanningsnet met prefab modules" (2025).</p>
+      <p>Infrasite, "Heijmans miljoenencontract TenneT" (dec 2025).</p>
+      <p>ACM concentratiebesluit BAM-Heijmans (feb 2020), Heijmans-Hegeman (dec 2025), Heijmans Infra-Dynniq Energy (jun 2022).</p>
+
+      <p><strong>Arbeidsmarkt</strong></p>
+      <p>CBS StatLine, leeftijdsopbouw technische sector (2023).</p>
+      <p>WENB arbeidsmarktmonitor (2024).</p>
+      <p>EenVandaag, "1 op de 5 technische bedrijven werft buitenlands personeel" (2025).</p>
+      <p>ROVC, Solar365 NL technici-tekort 60.000 in 2030.</p>
+      <p>CIGRE technical brochure "Ageing workforce in utilities" (2023).</p>
+      <p>ENTSO-E workforce outlook (2023).</p>
+      <p>Dutch Power Committee rapportage HS-engineers NL (2023).</p>
+      <p>AWVN cao-overzichten 2023-2024.</p>
+      <p>Randstad salarisonderzoek techniek 2024.</p>
+
+      <p><strong>Engineering AI</strong></p>
+      <p>MIT Sloan / SSRN, AI productiviteit ontwikkelaars 26% (2025).</p>
+      <p>IEA, AI-foutdetectie storingsduur (2025).</p>
+      <p>Tandfonline, predictive maintenance downtime (2025).</p>
+      <p>Energy Digital, NextEra Energy AI asset management (2025).</p>
+      <p>Enexis werkenbij, GenAI Engineers werving (2025).</p>
+      <p>Eurelectric, grid digitalisering (2025).</p>
+      <p>SER advies "AI en Werk" mei 2025.</p>
+      <p>KPMG, AI-investerings-uitkomsten (2025).</p>
+
+      <p><strong>Technologie en SF6</strong></p>
+      <p>Siemens Blue GIS en Digital Twin Composer (2025-2026).</p>
+      <p>Hitachi Energy PCM600 / IET600 IEC 61850 (2025).</p>
+      <p>Schneider AirSeT SF6-vrije technologie (2025).</p>
+      <p>GE Vernova g3 schakelmaterieel.</p>
+      <p>IPLO Informatiepunt Leefomgeving, SF6-regelgeving.</p>
+      <p>Dronematica, Aerialtronics, Leap3D drone-inspectie en BIM integratie.</p>
+      <p>IEEE/IET commissioning IEC 61850 digital substation (2025).</p>
+      <p>EU AI Act Annex III, FRIA-verplichting augustus 2026.</p>
+
+      <p><strong>Intern referentiemateriaal</strong></p>
+      <p>Qirion engineering rapport (peakmode.github.io/qirion-engineering-rapport).</p>
+      <p>Qirion marktanalyse (peakmode.github.io/qirion-marktanalyse).</p>
+      <p>Alliander AI-impactanalyse functiehuis (158 functies, intern).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer-section">
+  <div class="container">
+    <span class="footer-logo">QIRION &mdash; REALISATIE</span>
+    <p>Visiedocument SPP &mdash; Directeur Realisatie &mdash; Mei 2026</p>
+    <p style="margin-top: 0.4rem; opacity: 0.7;">Alle gepresenteerde cijfers zijn publiek tenzij anders aangegeven. Interne validatie via de zeven vragen in sectie 18.</p>
+  </div>
+</div>
+
+</div><!-- /tab-bouwstenen -->
+
+
+<div id="tts-bar" class="tts-bar collapsed" role="region" aria-label="Voorleesfunctie">
+  <button class="tts-main" id="tts-toggle" aria-label="Voorleesfunctie openen" title="Voorlezen">&#128266;</button>
+  <div class="tts-expand">
+    <button id="tts-prev" aria-label="Vorige zin" title="Vorige zin (&larr;)">&#9198;</button>
+    <button id="tts-playpause" aria-label="Afspelen of pauzeren" title="Afspelen of pauzeren (spatie)">&#9654;</button>
+    <button id="tts-next" aria-label="Volgende zin" title="Volgende zin (&rarr;)">&#9197;</button>
+    <button id="tts-stop" aria-label="Stoppen" title="Stoppen">&#9632;</button>
+    <select id="tts-section" aria-label="Spring naar sectie"></select>
+    <div class="tts-speed-group" role="group" aria-label="Snelheid">
+      <button data-speed="0.9" type="button">0,9&times;</button>
+      <button data-speed="1" type="button" class="active">1&times;</button>
+      <button data-speed="1.2" type="button">1,2&times;</button>
+      <button data-speed="1.5" type="button">1,5&times;</button>
+    </div>
+    <button id="tts-settings-btn" aria-label="Instellingen" title="Instellingen">&#9881;</button>
+    <span class="tts-status" id="tts-status">Klaar</span>
+    <button id="tts-close" aria-label="Voorleesfunctie sluiten" title="Sluiten">&times;</button>
+  </div>
+</div>
+<div id="tts-popover" class="tts-popover" hidden>
+  <button class="close" id="tts-popover-close" aria-label="Sluit instellingen" type="button">&times;</button>
+  <label>
+    <strong>Stem</strong>
+    <select id="tts-voice"></select>
+  </label>
+  <label style="display:flex;align-items:center;gap:0.5rem;">
+    <input type="checkbox" id="tts-highlight-on" checked>
+    <span>Actieve zin markeren tijdens voorlezen</span>
+  </label>
+  <p class="hint">Stemkwaliteit verschilt per browser en besturingssysteem. Microsoft Edge op Windows geeft meestal de beste Nederlandse stem. Referenties en bronnenlijsten worden automatisch overgeslagen.</p>
+</div>
+
+<script>
+(function() {
+  // ===== TAB SWITCHING =====
+  var tabButtons = document.querySelectorAll('.tab-button');
+  var tabContents = document.querySelectorAll('.tab-content');
+  function activateTab(name) {
+    tabButtons.forEach(function(b) {
+      b.classList.toggle('active', b.getAttribute('data-tab') === name);
+    });
+    tabContents.forEach(function(c) {
+      c.classList.toggle('active', c.id === 'tab-' + name);
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  tabButtons.forEach(function(b) {
+    b.addEventListener('click', function() {
+      activateTab(b.getAttribute('data-tab'));
+    });
+  });
+
+  // ===== ACCORDION PADEN =====
+  var padHeaders = document.querySelectorAll('.pad-header');
+  padHeaders.forEach(function(h) {
+    h.addEventListener('click', function() {
+      var item = h.parentElement;
+      item.classList.toggle('open');
+      var toggle = h.querySelector('.pad-toggle');
+      if (toggle) toggle.textContent = item.classList.contains('open') ? '\u2013' : '+';
+    });
+  });
+  var openAll = document.getElementById('openAllPads');
+  var closeAll = document.getElementById('closeAllPads');
+  if (openAll) openAll.addEventListener('click', function() {
+    document.querySelectorAll('.pad-item').forEach(function(i) {
+      i.classList.add('open');
+      var t = i.querySelector('.pad-toggle');
+      if (t) t.textContent = '\u2013';
+    });
+  });
+  if (closeAll) closeAll.addEventListener('click', function() {
+    document.querySelectorAll('.pad-item').forEach(function(i) {
+      i.classList.remove('open');
+      var t = i.querySelector('.pad-toggle');
+      if (t) t.textContent = '+';
+    });
+  });
+
+  // In-page anchors naar paden moeten accordion openen en tab wisselen
+  document.querySelectorAll('a.pad-link, a[href^="#pad"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var href = a.getAttribute('href') || '';
+      if (!href.startsWith('#pad')) return;
+      var target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      activateTab('loopbaanpaden');
+      target.classList.add('open');
+      var t = target.querySelector('.pad-toggle');
+      if (t) t.textContent = '\u2013';
+      setTimeout(function() {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 120);
+    });
+  });
+
+  // ===== ZELFASSESSMENT =====
+  // Routes: 1=Digitale ontwerp-tools, 2=IT/OT-integratie, 3=Technisch leider
+  var padMeta = {
+    1: { name: 'Verdiepen in digitale ontwerp-tools', anchor: '#v-werkbeweging' },
+    2: { name: 'Verbreden naar IT/OT-integratie', anchor: '#v-werkbeweging' },
+    3: { name: 'Verstevigen als technisch leider', anchor: '#v-werkbeweging' }
+  };
+  var questions = [
+    { q: 'Ik word enthousiast van 3D-modellering, visualisatie en het virtueel testen van ontwerpen.', w: { 1: 3 } },
+    { q: 'Ik ben gefascineerd door hoe sensoren, besturingssystemen en AI samen een installatie slimmer kunnen maken.', w: { 2: 3, 1: 1 } },
+    { q: 'Ik word al gevraagd als vraagbaak door collega\'s uit andere disciplines en vind dat leuk.', w: { 3: 3 } },
+    { q: 'Ik ben gefrustreerd als ontwerpfouten pas tijdens montage zichtbaar worden en wil dat voorkomen.', w: { 1: 3, 2: 1 } },
+    { q: 'Ik heb ervaring met of interesse in IEC 61850, SCADA of substation-automatisering.', w: { 2: 3 } },
+    { q: 'Ik haal energie uit het coachen en begeleiden van minder ervaren collega\'s.', w: { 3: 3, 2: 1 } },
+    { q: 'Ik zoek graag naar patronen in data en ben geinteresseerd in Power BI of analysetools.', w: { 1: 2, 2: 2 } },
+    { q: 'Ik kan complexe technische keuzes uitleggen aan niet-technische stakeholders.', w: { 3: 3, 1: 1 } },
+    { q: 'Ik denk liever in systemen en samenhang dan in losse componenten of disciplines.', w: { 2: 2, 3: 2 } },
+    { q: 'Ik ben bereid om nieuwe software te leren en pionier te zijn, ook als het toollandschap nog niet volwassen is.', w: { 1: 3, 2: 1 } },
+    { q: 'Cybersecurity en compliance in het ontwerp vind ik net zo belangrijk als de technische specificaties.', w: { 2: 2, 3: 1 } },
+    { q: 'Ik heb meer dan tien jaar ervaring en overziet projecten van begin tot eind.', w: { 3: 3 } }
+  ];
+  var scaleLabels = ['Zeer oneens', 'Oneens', 'Neutraal', 'Eens', 'Zeer eens'];
+  var form = document.getElementById('assessmentForm');
+  var submitBtn = document.getElementById('assessmentSubmit');
+  var resultBox = document.getElementById('assessmentResult');
+  var resultPads = document.getElementById('resultPads');
+  var resetBtn = document.getElementById('resetAssessment');
+
+  function renderQuestions() {
+    if (!form) return;
+    form.innerHTML = '';
+    questions.forEach(function(q, idx) {
+      var qDiv = document.createElement('div');
+      qDiv.className = 'assessment-question';
+      var nEl = document.createElement('div');
+      nEl.className = 'qnum';
+      nEl.textContent = 'Stelling ' + (idx + 1) + ' / ' + questions.length;
+      var tEl = document.createElement('div');
+      tEl.className = 'qtext';
+      tEl.textContent = q.q;
+      var scale = document.createElement('div');
+      scale.className = 'assessment-scale';
+      for (var s = 1; s <= 5; s++) {
+        var lbl = document.createElement('label');
+        var inp = document.createElement('input');
+        inp.type = 'radio';
+        inp.name = 'q' + idx;
+        inp.value = String(s);
+        inp.addEventListener('change', onAnswerChange);
+        var span = document.createElement('span');
+        span.textContent = scaleLabels[s - 1];
+        lbl.appendChild(inp);
+        lbl.appendChild(span);
+        scale.appendChild(lbl);
+      }
+      qDiv.appendChild(nEl);
+      qDiv.appendChild(tEl);
+      qDiv.appendChild(scale);
+      form.appendChild(qDiv);
+    });
+  }
+
+  function onAnswerChange(e) {
+    // Visuele selectie
+    var name = e.target.name;
+    form.querySelectorAll('input[name="' + name + '"]').forEach(function(inp) {
+      inp.parentElement.classList.toggle('selected', inp.checked);
+    });
+    // Alle beantwoord?
+    var answered = 0;
+    questions.forEach(function(_, idx) {
+      if (form.querySelector('input[name="q' + idx + '"]:checked')) answered++;
+    });
+    if (answered === questions.length) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Toon mijn top 2 paden';
+    } else {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Nog ' + (questions.length - answered) + ' stelling(en) te gaan';
+    }
+  }
+
+  function calculate() {
+    var scores = { 1: 0, 2: 0, 3: 0 };
+    var maxScores = { 1: 0, 2: 0, 3: 0 };
+    questions.forEach(function(q, idx) {
+      var inp = form.querySelector('input[name="q' + idx + '"]:checked');
+      if (!inp) return;
+      var val = parseInt(inp.value, 10) - 3; // -2..+2
+      Object.keys(q.w).forEach(function(p) {
+        scores[p] += val * q.w[p];
+        maxScores[p] += 2 * q.w[p];
+      });
+    });
+    // Normaliseer naar percentage
+    var ranked = Object.keys(scores).map(function(p) {
+      var pct = maxScores[p] > 0 ? Math.round(((scores[p] + maxScores[p]) / (2 * maxScores[p])) * 100) : 0;
+      return { id: p, score: scores[p], pct: pct, name: padMeta[p].name, anchor: padMeta[p].anchor };
+    }).sort(function(a, b) { return b.score - a.score; });
+    return ranked;
+  }
+
+  function renderResult() {
+    var ranked = calculate();
+    resultPads.innerHTML = '';
+    var top = ranked.slice(0, 2);
+    top.forEach(function(p, i) {
+      var div = document.createElement('div');
+      div.className = 'result-pad';
+      var rank = document.createElement('div');
+      rank.className = 'rank';
+      rank.textContent = (i === 0 ? 'Beste match' : 'Tweede match');
+      var name = document.createElement('div');
+      name.className = 'name';
+      name.textContent = p.name;
+      var sc = document.createElement('div');
+      sc.className = 'score';
+      sc.textContent = 'Fit-score: ' + p.pct + '%';
+      var link = document.createElement('a');
+      link.href = p.anchor;
+      link.textContent = 'Bekijk dit pad \u2192';
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(p.anchor);
+        if (!target) return;
+        target.classList.add('open');
+        var t = target.querySelector('.pad-toggle');
+        if (t) t.textContent = '\u2013';
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      div.appendChild(rank);
+      div.appendChild(name);
+      div.appendChild(sc);
+      div.appendChild(link);
+      resultPads.appendChild(div);
+    });
+    resultBox.classList.add('show');
+    setTimeout(function() {
+      resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 80);
+  }
+
+  if (submitBtn) submitBtn.addEventListener('click', renderResult);
+  if (resetBtn) resetBtn.addEventListener('click', function() {
+    resultBox.classList.remove('show');
+    renderQuestions();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Beantwoord alle 12 stellingen om je resultaat te zien';
+  });
+
+  renderQuestions();
+})();
+</script>
+
+<script>
+/* ===== VOORLEESFUNCTIE =====
+   Gebruikt SpeechSynthesis API (browser-native, geen backend).
+   - Leest beide tabs voor op verzoek.
+   - Slaat bronvermeldingen (.ref) en bronnen-blokken (.sources-list) over.
+   - Highlight de actieve zin via CSS Custom Highlight API (geen DOM-mutatie).
+   - Onthoudt voorkeuren (stem, snelheid, highlight) in localStorage. */
+(function() {
+  if (!('speechSynthesis' in window)) return;
+  var bar = document.getElementById('tts-bar');
+  if (!bar) return;
+
+  var STORAGE_KEY = 'hrxai.tts.v2';
+  var state = { voiceName: null, voiceExplicit: false, speed: 1, highlight: true };
+  try {
+    var saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    if (saved && typeof saved === 'object') Object.assign(state, saved);
+  } catch (e) {}
+  function save() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+  }
+
+  var queue = [];
+  var queueIdx = 0;
+  var isPlaying = false;
+  var isPaused = false;
+  var units = [];
+  var skipping = false;
+
+  var hasHighlightAPI = (typeof CSS !== 'undefined' && CSS.highlights && typeof Highlight !== 'undefined');
+  var highlightObj = null;
+  if (hasHighlightAPI) {
+    try {
+      highlightObj = new Highlight();
+      CSS.highlights.set('tts-active', highlightObj);
+    } catch (e) { hasHighlightAPI = false; }
+  }
+
+  // ---- Voices ----
+  var voiceSelect = document.getElementById('tts-voice');
+  var voices = [];
+  function loadVoices() {
+    voices = window.speechSynthesis.getVoices() || [];
+    var nl = voices.filter(function(v) { return /^nl/i.test(v.lang); });
+    var pref = ['Fenna', 'Maarten', 'Colette', 'Xander', 'Google Nederlands'];
+    nl.sort(function(a, b) {
+      function rank(v) {
+        for (var i = 0; i < pref.length; i++) {
+          if (v.name.indexOf(pref[i]) >= 0) return i;
+        }
+        return 99;
+      }
+      return rank(a) - rank(b);
+    });
+    var other = voices.filter(function(v) { return !/^nl/i.test(v.lang); });
+    var ordered = nl.concat(other);
+    if (!voiceSelect) return;
+    voiceSelect.innerHTML = '';
+    if (ordered.length === 0) {
+      var opt = document.createElement('option');
+      opt.textContent = 'Geen stemmen beschikbaar';
+      voiceSelect.appendChild(opt);
+      return;
+    }
+    // Group Dutch first
+    if (nl.length > 0) {
+      var gNl = document.createElement('optgroup');
+      gNl.label = 'Nederlands';
+      nl.forEach(function(v) {
+        var o = document.createElement('option');
+        o.value = v.name;
+        o.textContent = v.name.replace(/Microsoft |Online \(Natural\) - /g, '') + ' (' + v.lang + ')';
+        gNl.appendChild(o);
+      });
+      voiceSelect.appendChild(gNl);
+    }
+    if (other.length > 0) {
+      var gOther = document.createElement('optgroup');
+      gOther.label = 'Overig';
+      other.slice(0, 30).forEach(function(v) {
+        var o = document.createElement('option');
+        o.value = v.name;
+        o.textContent = v.name + ' (' + v.lang + ')';
+        gOther.appendChild(o);
+      });
+      voiceSelect.appendChild(gOther);
+    }
+    // Fenna is de default. Alleen als de gebruiker zelf een andere stem koos
+    // (voiceExplicit === true) respecteren we die.
+    var fenna = ordered.find(function(v) { return v.name.indexOf('Fenna') >= 0; });
+    var found = state.voiceName ? ordered.find(function(v) { return v.name === state.voiceName; }) : null;
+    if (state.voiceExplicit && found) {
+      voiceSelect.value = found.name;
+    } else if (fenna) {
+      voiceSelect.value = fenna.name;
+      state.voiceName = fenna.name;
+      save();
+    } else if (nl.length > 0) {
+      voiceSelect.value = nl[0].name;
+      state.voiceName = nl[0].name;
+      save();
+    }
+  }
+  loadVoices();
+  if (typeof window.speechSynthesis.onvoiceschanged !== 'undefined') {
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+  }
+
+  // ---- Build reading units from active tab ----
+  function getActiveTabEl() { return document.querySelector('.tab-content.active'); }
+
+  function isExcluded(node) {
+    var p = node;
+    while (p && p.nodeType === 1) {
+      if (p.classList) {
+        if (p.classList.contains('ref') || p.classList.contains('sources-list') ||
+            p.id === 'tts-bar' || p.id === 'tts-popover') return true;
+      }
+      p = p.parentNode;
+    }
+    return false;
+  }
+
+  function extractUnitText(el) {
+    var clone = el.cloneNode(true);
+    clone.querySelectorAll('.ref, .sources-list, .pad-toggle, .pad-numlabel').forEach(function(n) { n.remove(); });
+    return clone.textContent.replace(/\s+/g, ' ').trim();
+  }
+
+  function collectUnits(root) {
+    var selector = 'h1, h2, h3, h4, h5, h6, p, li, .case-block, .tprofiel-card .desc, .assessment-question .qtext';
+    var all = root.querySelectorAll(selector);
+    var result = [];
+    var seenText = new Set();
+    all.forEach(function(el) {
+      if (el.closest('.sources-list')) return;
+      if (el.closest('#tts-bar') || el.closest('#tts-popover')) return;
+      // Avoid reading li's parent p twice etc: skip nested non-leaf block reads.
+      // A <p> with inner <li>? uncommon here. Skip if element contains another selected unit except inline.
+      // For li inside ul inside .case-block, we still want to read them.
+      var text = extractUnitText(el);
+      if (!text || text.length < 2) return;
+      result.push({ el: el, text: text });
+    });
+    return result;
+  }
+
+  function splitSentences(text) {
+    var parts = text.match(/[^.!?]+[.!?]+["')\]]?\s*|\S[^.!?]*$/g);
+    if (!parts) return [text];
+    return parts.map(function(s) { return s.trim(); }).filter(function(s) { return s.length > 0; });
+  }
+
+  function getTextNodesIn(root) {
+    var nodes = [];
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n) {
+        if (!n.nodeValue) return NodeFilter.FILTER_REJECT;
+        if (isExcluded(n.parentNode)) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    return nodes;
+  }
+
+  function buildRangeForSentence(el, sentenceText) {
+    var nodes = getTextNodesIn(el);
+    if (nodes.length === 0) return null;
+    var raw = '';
+    var map = [];
+    nodes.forEach(function(n) {
+      map.push({ node: n, start: raw.length, end: raw.length + n.nodeValue.length });
+      raw += n.nodeValue;
+    });
+    var normRaw = '';
+    var idxMap = [];
+    for (var i = 0; i < raw.length; i++) {
+      var ch = raw[i];
+      if (/\s/.test(ch)) {
+        if (normRaw.length > 0 && normRaw[normRaw.length - 1] !== ' ') {
+          normRaw += ' ';
+          idxMap.push(i);
+        }
+      } else {
+        normRaw += ch;
+        idxMap.push(i);
+      }
+    }
+    var needle = sentenceText.replace(/\s+/g, ' ').trim();
+    var pos = normRaw.indexOf(needle);
+    if (pos < 0) {
+      var shortNeedle = needle.substring(0, Math.min(24, needle.length));
+      pos = normRaw.indexOf(shortNeedle);
+      if (pos < 0) return null;
+    }
+    var startRaw = idxMap[pos];
+    var endNormIdx = Math.min(pos + needle.length - 1, idxMap.length - 1);
+    var endRaw = idxMap[endNormIdx] + 1;
+    var startNode = null, startOffset = 0, endNode = null, endOffset = 0;
+    for (var j = 0; j < map.length; j++) {
+      if (startRaw >= map[j].start && startRaw < map[j].end) {
+        startNode = map[j].node;
+        startOffset = startRaw - map[j].start;
+      }
+      if (endRaw > map[j].start && endRaw <= map[j].end) {
+        endNode = map[j].node;
+        endOffset = endRaw - map[j].start;
+      }
+    }
+    if (!startNode || !endNode) return null;
+    try {
+      var r = document.createRange();
+      r.setStart(startNode, startOffset);
+      r.setEnd(endNode, endOffset);
+      return r;
+    } catch (e) { return null; }
+  }
+
+  function buildQueue(startUnitIdx) {
+    queue = [];
+    // Combineer zinnen uit hetzelfde blok tot chunks van max ~220 tekens.
+    // Zo zitten de onvermijdelijke microknipjes tussen utterances
+    // bij natuurlijke grenzen (na een paar zinnen of aan het eind van een paragraaf),
+    // niet na elke losse zin. Onder Chrome's ~15s-limiet met marge.
+    var MAX_CHUNK = 220;
+    for (var i = startUnitIdx; i < units.length; i++) {
+      var u = units[i];
+      var sents = splitSentences(u.text);
+      var chunk = '';
+      for (var s = 0; s < sents.length; s++) {
+        var sent = sents[s];
+        if (chunk.length === 0) {
+          chunk = sent;
+        } else if (chunk.length + 1 + sent.length <= MAX_CHUNK) {
+          chunk += ' ' + sent;
+        } else {
+          queue.push({ text: chunk, el: u.el, unitIdx: i });
+          chunk = sent;
+        }
+      }
+      if (chunk.length > 0) {
+        queue.push({ text: chunk, el: u.el, unitIdx: i });
+      }
+    }
+    queueIdx = 0;
+  }
+
+  var sectionSelect = document.getElementById('tts-section');
+  function populateSections() {
+    if (!sectionSelect) return;
+    sectionSelect.innerHTML = '';
+    var first = document.createElement('option');
+    first.value = '0';
+    first.textContent = 'Vanaf begin';
+    sectionSelect.appendChild(first);
+    units.forEach(function(u, i) {
+      var tag = u.el.tagName;
+      if (tag === 'H1' || tag === 'H2') {
+        var opt = document.createElement('option');
+        opt.value = String(i);
+        var t = u.text;
+        if (t.length > 60) t = t.substring(0, 60) + '\u2026';
+        opt.textContent = (tag === 'H1' ? '' : '') + t;
+        sectionSelect.appendChild(opt);
+      }
+    });
+  }
+
+  function rebuildForActiveTab() {
+    stop();
+    var root = getActiveTabEl();
+    if (!root) { units = []; populateSections(); return; }
+    units = collectUnits(root);
+    populateSections();
+  }
+
+  // ---- Playback ----
+  var statusEl = document.getElementById('tts-status');
+  function setStatus(txt) { if (statusEl) statusEl.textContent = txt; }
+
+  function applyHighlight(item) {
+    if (!state.highlight) { clearHighlight(); return; }
+    if (!hasHighlightAPI) return;
+    try {
+      var r = buildRangeForSentence(item.el, item.text);
+      highlightObj.clear();
+      if (r) {
+        highlightObj.add(r);
+        var rect = r.getBoundingClientRect();
+        var vh = window.innerHeight || document.documentElement.clientHeight;
+        if (rect.top < 80 || rect.bottom > vh - 120) {
+          item.el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    } catch (e) {}
+  }
+  function clearHighlight() {
+    if (hasHighlightAPI && highlightObj) {
+      try { highlightObj.clear(); } catch (e) {}
+    }
+  }
+
+  function speakNext() {
+    if (!isPlaying) return;
+    if (queueIdx >= queue.length) { stop(); return; }
+    var item = queue[queueIdx];
+    var u = new SpeechSynthesisUtterance(item.text);
+    u.rate = state.speed;
+    u.lang = 'nl-NL';
+    var v = voices.find(function(x) { return x.name === state.voiceName; });
+    if (v) u.voice = v;
+    u.onstart = function() {
+      applyHighlight(item);
+      setStatus('Bezig ' + (queueIdx + 1) + '/' + queue.length);
+    };
+    u.onend = function() {
+      if (skipping) return;
+      if (!isPlaying) return;
+      queueIdx++;
+      setTimeout(speakNext, 0);
+    };
+    u.onerror = function() {
+      if (skipping) return;
+      if (!isPlaying) return;
+      queueIdx++;
+      setTimeout(speakNext, 0);
+    };
+    try { window.speechSynthesis.speak(u); } catch (e) {}
+  }
+
+  function play() {
+    if (isPaused) {
+      try { window.speechSynthesis.resume(); } catch (e) {}
+      isPaused = false;
+      setStatus('Bezig');
+      updatePlayButton();
+      return;
+    }
+    if (isPlaying) return;
+    if (units.length === 0) rebuildForActiveTab();
+    if (queue.length === 0) {
+      var startIdx = sectionSelect ? parseInt(sectionSelect.value || '0', 10) : 0;
+      if (isNaN(startIdx)) startIdx = 0;
+      buildQueue(startIdx);
+    }
+    if (queue.length === 0) { setStatus('Niets om voor te lezen'); return; }
+    isPlaying = true;
+    isPaused = false;
+    updatePlayButton();
+    speakNext();
+  }
+  function pause() {
+    if (!isPlaying || isPaused) return;
+    try { window.speechSynthesis.pause(); } catch (e) {}
+    isPaused = true;
+    setStatus('Gepauzeerd');
+    updatePlayButton();
+  }
+  function stop() {
+    isPlaying = false;
+    isPaused = false;
+    queue = [];
+    queueIdx = 0;
+    try { window.speechSynthesis.cancel(); } catch (e) {}
+    clearHighlight();
+    setStatus('Klaar');
+    updatePlayButton();
+  }
+
+  var playBtn = document.getElementById('tts-playpause');
+  function updatePlayButton() {
+    if (!playBtn) return;
+    playBtn.textContent = (isPlaying && !isPaused) ? '\u275A\u275A' : '\u25B6';
+  }
+
+  if (playBtn) playBtn.addEventListener('click', function() {
+    if (isPlaying && !isPaused) pause(); else play();
+  });
+  var stopBtn = document.getElementById('tts-stop');
+  if (stopBtn) stopBtn.addEventListener('click', stop);
+
+  // Vooruit/terug spoelen per zin-chunk.
+  function skipTo(newIdx) {
+    if (queue.length === 0) {
+      // Queue nog niet gebouwd: bouw em nu zodat preview werkt.
+      if (units.length === 0) rebuildForActiveTab();
+      var startIdx = sectionSelect ? parseInt(sectionSelect.value || '0', 10) : 0;
+      if (isNaN(startIdx)) startIdx = 0;
+      buildQueue(startIdx);
+      if (queue.length === 0) return;
+    }
+    newIdx = Math.max(0, Math.min(queue.length - 1, newIdx));
+    queueIdx = newIdx;
+    var item = queue[queueIdx];
+    setStatus('Bezig ' + (queueIdx + 1) + '/' + queue.length);
+    if (isPlaying) {
+      // Huidige utterance afbreken en direct de nieuwe starten,
+      // zonder dat onend per ongeluk nog een stap vooruit doet.
+      skipping = true;
+      try { window.speechSynthesis.cancel(); } catch (e) {}
+      setTimeout(function() {
+        skipping = false;
+        if (isPlaying) {
+          if (isPaused) { isPaused = false; updatePlayButton(); }
+          speakNext();
+        }
+      }, 40);
+    } else {
+      // Niet aan het spelen: preview de highlight en scroll erheen.
+      applyHighlight(item);
+    }
+  }
+  function skipPrev() { skipTo(queueIdx - 1); }
+  function skipNext() { skipTo(queueIdx + 1); }
+
+  var prevBtn = document.getElementById('tts-prev');
+  var nextBtn = document.getElementById('tts-next');
+  if (prevBtn) prevBtn.addEventListener('click', skipPrev);
+  if (nextBtn) nextBtn.addEventListener('click', skipNext);
+
+  // Toetsenbord shortcuts wanneer de bar focus heeft
+  bar.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'SELECT') return;
+    if (e.key === 'ArrowLeft') { skipPrev(); e.preventDefault(); }
+    else if (e.key === 'ArrowRight') { skipNext(); e.preventDefault(); }
+    else if (e.key === ' ') {
+      if (isPlaying && !isPaused) pause(); else play();
+      e.preventDefault();
+    }
+  });
+
+  // Speed buttons
+  var speedBtns = document.querySelectorAll('#tts-bar [data-speed]');
+  speedBtns.forEach(function(b) {
+    if (parseFloat(b.getAttribute('data-speed')) === state.speed) b.classList.add('active');
+    else b.classList.remove('active');
+    b.addEventListener('click', function() {
+      state.speed = parseFloat(b.getAttribute('data-speed'));
+      save();
+      speedBtns.forEach(function(x) { x.classList.toggle('active', x === b); });
+      // Nieuwe snelheid wordt toegepast op de volgende zin, geen onderbreking.
+    });
+  });
+
+  if (sectionSelect) sectionSelect.addEventListener('change', function() {
+    var startIdx = parseInt(sectionSelect.value || '0', 10);
+    if (isNaN(startIdx)) startIdx = 0;
+    var wasPlaying = isPlaying;
+    stop();
+    buildQueue(startIdx);
+    if (units[startIdx]) {
+      units[startIdx].el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    if (wasPlaying) setTimeout(play, 120);
+  });
+
+  // Expand/collapse bar
+  var toggleBtn = document.getElementById('tts-toggle');
+  var closeBtn = document.getElementById('tts-close');
+  if (toggleBtn) toggleBtn.addEventListener('click', function() {
+    bar.classList.remove('collapsed');
+  });
+  if (closeBtn) closeBtn.addEventListener('click', function() {
+    stop();
+    var pop = document.getElementById('tts-popover');
+    if (pop) pop.hidden = true;
+    bar.classList.add('collapsed');
+  });
+
+  // Settings popover
+  var settingsBtn = document.getElementById('tts-settings-btn');
+  var popover = document.getElementById('tts-popover');
+  var popoverClose = document.getElementById('tts-popover-close');
+  if (settingsBtn) settingsBtn.addEventListener('click', function() {
+    if (popover) popover.hidden = !popover.hidden;
+  });
+  if (popoverClose) popoverClose.addEventListener('click', function() {
+    if (popover) popover.hidden = true;
+  });
+  if (voiceSelect) voiceSelect.addEventListener('change', function() {
+    state.voiceName = voiceSelect.value;
+    state.voiceExplicit = true;
+    save();
+  });
+  var hlToggle = document.getElementById('tts-highlight-on');
+  if (hlToggle) {
+    hlToggle.checked = !!state.highlight;
+    hlToggle.addEventListener('change', function() {
+      state.highlight = hlToggle.checked;
+      save();
+      if (!state.highlight) clearHighlight();
+    });
+  }
+
+  // Stop & rebuild bij tabwissel
+  document.querySelectorAll('.tab-button').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      stop();
+      setTimeout(rebuildForActiveTab, 60);
+    });
+  });
+
+  // Stop bij unload
+  window.addEventListener('beforeunload', function() {
+    try { window.speechSynthesis.cancel(); } catch (e) {}
+  });
+
+  // Eerste build
+  rebuildForActiveTab();
+})();
+</script>
+
+</body>
+</html>
